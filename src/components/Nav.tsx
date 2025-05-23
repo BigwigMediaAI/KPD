@@ -23,18 +23,20 @@ const Navbar: React.FC = () => {
       <div className=" flex items-center justify-between px-4 py-3 md:px-10 md:py-6">
         {/* Logo */}
         <div className="flex-1 text-center md:text-left">
-          <img
-            src={logo}
-            alt="Saraswati Properties"
-            className="mx-auto md:mx-0 h-16 object-contain"
-            draggable="false"
-          />
+          <a href="/">
+            <img
+              src={logo}
+              alt="Saraswati Properties"
+              className="mx-auto md:mx-0 h-16 object-contain"
+              draggable="false"
+            />
+          </a>
         </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 text-[#04365b] font-medium">
           <a href="/">HOME</a>
-          <a href="#">ABOUT US</a>
+          <a href="/about">ABOUT US</a>
           <div className="relative group">
             <a href="#" className="flex items-center space-x-1">
               <span>PROJECTS</span>
@@ -69,7 +71,7 @@ const Navbar: React.FC = () => {
           <a href="/" className="block">
             HOME
           </a>
-          <a href="#" className="block">
+          <a href="/about" className="block">
             ABOUT US
           </a>
           <a href="#" className="block">
