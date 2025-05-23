@@ -16,13 +16,18 @@ const Footer: React.FC = () => {
       <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
         {/* Left Column: Company Info */}
         <div className="flex-1">
-          <img src={logo} alt="Saraswati Properties" className="h-24 mb-4" />
+          <img
+            src={logo}
+            alt="KHALSA PROPERTY DEALERS Properties"
+            className="h-24 mb-4"
+          />
           <p className="text-sm leading-relaxed text-gray-300">
-            Saraswati Properties is an accomplished best property dealer in
-            Delhi operational in Rohini and Pitampura, New Delhi since 1982.
-            Saraswati Properties has an experience of 35+ years in Real Estate.
-            Saraswati Properties has 8+ offices situated in Delhi and NCR and
-            delivered millions of projects on time.
+            KHALSA PROPERTY DEALERS Properties is an accomplished best property
+            dealer in Delhi operational in Rohini and Pitampura, New Delhi since
+            1982. KHALSA PROPERTY DEALERS Properties has an experience of 35+
+            years in Real Estate. KHALSA PROPERTY DEALERS Properties has 8+
+            offices situated in Delhi and NCR and delivered millions of projects
+            on time.
           </p>
         </div>
 
@@ -60,11 +65,11 @@ const Footer: React.FC = () => {
           <div className="text-sm space-y-3 text-gray-300">
             <p className="flex items-start">
               <MapPin className="w-5 h-5 mt-1 mr-2" />
-              PLOT NO.68-69, POCKET A-1, SECTOR-36, ROHINI, New Delhi–110085
+              Plot 2, Sanjay Nagar, Gulabi Bagh, Delhi - 110007
             </p>
             <p className="flex items-center">
               <Mail className="w-5 h-5 mr-2" />
-              info@saraswatiproperties.co
+              info@KHALSA PROPERTY DEALERSproperties.co
             </p>
             <p className="flex items-center">
               <Phone className="w-5 h-5 mr-2" />
