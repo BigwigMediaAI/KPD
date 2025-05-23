@@ -41,7 +41,7 @@ const About: React.FC = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-black text-[#D7B865] border border-[#D7B865] p-6 rounded shadow-md text-center"
+              className="bg-gray-100 text-[#D7B865] border border-[#D7B865] p-6 rounded shadow-md text-center"
             >
               <h3 className="text-2xl font-bold mb-2">{item.value}</h3>
               <p className="text-lg font-semibold">{item.label}</p>

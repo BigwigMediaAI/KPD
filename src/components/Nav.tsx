@@ -6,21 +6,21 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header>
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       {/* Top Bar */}
       <div className="bg-[#c9a368] text-white text-sm px-4 py-1 flex justify-end items-center space-x-4">
         <div className="flex items-center space-x-1">
           <span className="text-xs">📞</span>
-          <span>08037 89 89 89</span>
+          <span>+91-9212717362</span>
         </div>
         <div className="flex items-center space-x-1">
           <span className="text-xs">✉️</span>
-          <span>info@saraswatiproperties.co</span>
+          <span>info@kpd.co</span>
         </div>
       </div>
 
       {/* Main Header */}
-      <div className="flex items-center justify-between px-4 py-3 md:px-10 md:py-6">
+      <div className=" flex items-center justify-between px-4 py-3 md:px-10 md:py-6">
         {/* Logo */}
         <div className="flex-1 text-center md:text-left">
           <img
@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 text-[#04365b] font-medium">
-          <a href="#">HOME</a>
+          <a href="/">HOME</a>
           <a href="#">ABOUT US</a>
           <div className="relative group">
             <a href="#" className="flex items-center space-x-1">
@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
             </a>
           </div>
           <a href="#">BLOGS</a>
-          <a href="#">CONTACT US</a>
+          <a href="/contact">CONTACT US</a>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2 text-[#04365b] font-medium">
-          <a href="#" className="block">
+          <a href="/" className="block">
             HOME
           </a>
           <a href="#" className="block">
@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
           <a href="#" className="block">
             BLOGS
           </a>
-          <a href="#" className="block">
+          <a href="/contact" className="block">
             CONTACT US
           </a>
         </div>
