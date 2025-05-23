@@ -27,6 +27,7 @@ const Navbar: React.FC = () => {
             src={logo}
             alt="Saraswati Properties"
             className="mx-auto md:mx-0 h-16 object-contain"
+            draggable="false"
           />
         </div>
 

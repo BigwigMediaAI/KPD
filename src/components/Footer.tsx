@@ -20,6 +20,7 @@ const Footer: React.FC = () => {
             src={logo}
             alt="KHALSA PROPERTY DEALERS Properties"
             className="h-24 mb-4"
+            draggable="false"
           />
           <p className="text-sm leading-relaxed text-gray-300">
             KHALSA PROPERTY DEALERS Properties is an accomplished best property
