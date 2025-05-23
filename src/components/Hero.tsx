@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import hero from "../assets/hero.mp4";
 
 const keywords = [
-  "Website & Mobile App Designing",
-  "Social Media Marketing (SMM)",
-  "Performance Marketing (Google & Meta Ads)",
-  "Search Engine Optimization (SEO)",
-  "Creatives Videos Graphics",
+  "Residential & Commercial Property Sales",
+  "Project Marketing & Promotions",
+  "Property Investment Consultation",
+  "Legal & Documentation Assistance",
+  "Builder Floor & Plot Listings",
 ];
 
 const Hero: React.FC = () => {
@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
       {/* Text Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 md:px-20">
         <h1 className="font-bold text-xl md:text-5xl mb-3 max-w-4xl">
-          We help businesses grow digitally!
+          Find your perfect space with Delhi’s most trusted property dealer.{" "}
         </h1>
         <h2 className="text-sm md:text-lg italic mb-6">
           <span className="text-white text-base md:text-3xl font-bold">

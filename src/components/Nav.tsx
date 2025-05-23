@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
           <img
             src={logo}
             alt="Saraswati Properties"
-            className="mx-auto md:mx-0 h-14 object-contain"
+            className="mx-auto md:mx-0 h-16 object-contain"
           />
         </div>
 
