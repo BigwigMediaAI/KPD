@@ -163,7 +163,7 @@ export default function ContactPage() {
         {/* Map Section */}
         <div className="w-full md:w-1/2 h-[450px] rounded-lg overflow-hidden shadow-lg border border-[#D7B865]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.668560792657!2d55.264871674024235!3d25.18066683237258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69004a524faf%3A0x13d5b1575adb574a!2sBusiness%20Bay!5e0!3m2!1sen!2sin!4v1744201890505!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.456367506469!2d77.18617288098022!3d28.675992012833134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0278ebc00fbb%3A0x64f8a1ecc1a04cb6!2sKhalsa%20Property%20Dealer!5e0!3m2!1sen!2sin!4v1748007332649!5m2!1sen!2sin"
             width="100%"
             height="100%"
             allowFullScreen
