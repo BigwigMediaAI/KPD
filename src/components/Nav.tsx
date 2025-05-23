@@ -1,0 +1,89 @@
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import logo from "../assets/logo-inner.png";
+
+const Navbar: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <header>
+      {/* Top Bar */}
+      <div className="bg-[#c9a368] text-white text-sm px-4 py-1 flex justify-end items-center space-x-4">
+        <div className="flex items-center space-x-1">
+          <span className="text-xs">📞</span>
+          <span>08037 89 89 89</span>
+        </div>
+        <div className="flex items-center space-x-1">
+          <span className="text-xs">✉️</span>
+          <span>info@saraswatiproperties.co</span>
+        </div>
+      </div>
+
+      {/* Main Header */}
+      <div className="flex items-center justify-between px-4 py-3 md:px-10 md:py-6">
+        {/* Logo */}
+        <div className="flex-1 text-center md:text-left">
+          <img
+            src={logo}
+            alt="Saraswati Properties"
+            className="mx-auto md:mx-0 h-14 object-contain"
+          />
+        </div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex space-x-6 text-[#04365b] font-medium">
+          <a href="#">HOME</a>
+          <a href="#">ABOUT US</a>
+          <div className="relative group">
+            <a href="#" className="flex items-center space-x-1">
+              <span>PROJECTS</span>
+              <span className="transform group-hover:rotate-180 transition duration-200">
+                ▼
+              </span>
+            </a>
+          </div>
+          <a href="#">BLOGS</a>
+          <a href="#">CONTACT US</a>
+        </nav>
+
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden">
+          {menuOpen ? (
+            <X
+              onClick={() => setMenuOpen(false)}
+              className="w-6 h-6 text-[#04365b]"
+            />
+          ) : (
+            <Menu
+              onClick={() => setMenuOpen(true)}
+              className="w-6 h-6 text-[#04365b]"
+            />
+          )}
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden px-4 pb-4 space-y-2 text-[#04365b] font-medium">
+          <a href="#" className="block">
+            HOME
+          </a>
+          <a href="#" className="block">
+            ABOUT US
+          </a>
+          <a href="#" className="block">
+            PROJECTS ▼
+          </a>
+          <a href="#" className="block">
+            BLOGS
+          </a>
+          <a href="#" className="block">
+            CONTACT US
+          </a>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Navbar;
