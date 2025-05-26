@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
             ABOUT US
           </a>
           <a href="#" className="block">
-            PROJECTS ▼
+            PROJECTS
           </a>
           <a href="#" className="block">
             BLOGS
