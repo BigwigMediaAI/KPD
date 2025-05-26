@@ -4,7 +4,8 @@ import { Mail, MessageSquareText, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 import Footer from "../components/Footer";
-import Navbar from "../components/nav";
+import Navbar from "../components/Nav";
+import ContactSidebar from "../components/ContactSidebar";
 
 export default function ContactPage() {
   return (
@@ -174,6 +175,7 @@ export default function ContactPage() {
         </div>
       </div>
       <Footer />
+      <ContactSidebar />
     </div>
   );
 }

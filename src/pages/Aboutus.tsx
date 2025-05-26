@@ -1,7 +1,8 @@
 import React from "react";
 import aboutImg from "../assets/logo-inner.png"; // Replace with actual image
-import Navbar from "../components/nav";
+import Navbar from "../components/Nav";
 import Footer from "../components/Footer";
+import ContactSidebar from "../components/ContactSidebar";
 
 const About: React.FC = () => {
   return (
@@ -88,6 +89,7 @@ const About: React.FC = () => {
         </section>
       </div>
       <Footer />
+      <ContactSidebar />
     </div>
   );
 };

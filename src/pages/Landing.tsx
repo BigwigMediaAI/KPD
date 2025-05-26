@@ -1,7 +1,8 @@
 import About from "../components/About";
+import ContactSidebar from "../components/ContactSidebar";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-import Navbar from "../components/nav";
+import Navbar from "../components/Nav";
 
 function Landing() {
   return (
@@ -10,6 +11,7 @@ function Landing() {
       <Hero />
       <About />
       <Footer />
+      <ContactSidebar />
     </div>
   );
 }

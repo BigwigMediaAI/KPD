@@ -32,3 +32,8 @@
 .btn-primary {
   @apply bg-blue-600 hover:bg-blue-700;
 }
+
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
