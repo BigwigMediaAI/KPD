@@ -88,7 +88,7 @@ const About: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[#D7B865] mb-6">
             ABOUT KHALSA PROPERTY DEALERS
           </h2>
-          <p className="text-lg leading-relaxed mb-6 text-black">
+          <p className="text-lg leading-relaxed mb-6 text-black text-justify md:text-start">
             KHALSA PROPERTY DEALERS Properties is an accomplished best property
             dealer in Delhi operational in
             <strong> Rohini and Pitampura, New Delhi</strong> since 1982. With
@@ -108,10 +108,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Metrics Section */}
-        <div
-          ref={metricsRef}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:w-1/2"
-        >
+        <div ref={metricsRef} className="grid grid-cols-2 gap-6 md:w-1/2">
           {metrics.map((item, index) => (
             <div
               key={index}
