@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
   }, [displayText, isDeleting, waitBeforeDelete]);
 
   return (
-    <div className="relative w-full h-[240px] sm:h-[400px] md:h-[80vh] overflow-hidden mt-28 md:mt-32">
+    <div className="relative w-full h-[240px] sm:h-[400px] md:h-[80vh] overflow-hidden mt-28 md:mt-28">
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
