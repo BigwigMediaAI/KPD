@@ -73,13 +73,13 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="py-16 px-4 bg-white">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-black">
-        WHAT PEOPLE SAYS…
+      <h2 className="text-3xl md:text-4xl font-bold text-[#D7B865] mb-6 text-center">
+        WHAT PEOPLE SAYS
       </h2>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="px-8">
+            <div key={index} className="px-4">
               <div className="bg-[#c59b57] rounded-md p-6 text-white flex flex-col justify-between min-h-[250px] h-full">
                 <div>
                   <span className="text-4xl font-serif">“</span>

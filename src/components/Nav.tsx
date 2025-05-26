@@ -37,14 +37,8 @@ const Navbar: React.FC = () => {
         <nav className="hidden md:flex space-x-6 text-[#04365b] font-medium">
           <a href="/">HOME</a>
           <a href="/about">ABOUT US</a>
-          <div className="relative group">
-            <a href="#" className="flex items-center space-x-1">
-              <span>PROJECTS</span>
-              <span className="transform group-hover:rotate-180 transition duration-200">
-                ▼
-              </span>
-            </a>
-          </div>
+          <a href="#">PROJECTS</a>
+
           <a href="#">BLOGS</a>
           <a href="/contact">CONTACT US</a>
         </nav>

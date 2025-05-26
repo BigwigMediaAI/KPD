@@ -1,6 +1,82 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+
+interface CountUpProps {
+  end: number;
+  duration?: number;
+  startCounting: boolean;
+}
+
+const CountUp: React.FC<CountUpProps> = ({
+  end,
+  duration = 2000,
+  startCounting,
+}) => {
+  const [count, setCount] = useState(0);
+  const startTimestamp = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!startCounting) {
+      setCount(0);
+      startTimestamp.current = null;
+      return;
+    }
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp.current) startTimestamp.current = timestamp;
+      const progress = timestamp - startTimestamp.current;
+      const progressRatio = Math.min(progress / duration, 1);
+      setCount(Math.floor(progressRatio * end));
+      if (progress < duration) {
+        requestAnimationFrame(step);
+      } else {
+        setCount(end);
+      }
+    };
+
+    requestAnimationFrame(step);
+
+    return () => {
+      startTimestamp.current = null;
+    };
+  }, [startCounting, end, duration]);
+
+  return <>{count.toLocaleString()}</>;
+};
 
 const About: React.FC = () => {
+  const metricsRef = useRef<HTMLDivElement | null>(null);
+  const [startCount, setStartCount] = useState(false);
+
+  useEffect(() => {
+    if (!metricsRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setStartCount(true);
+            observer.disconnect(); // start once
+          }
+        });
+      },
+      {
+        threshold: 0.3, // 30% of element visible triggers animation
+      }
+    );
+
+    observer.observe(metricsRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Define your data with numeric values
+  const metrics = [
+    { label: "PROPERTY SOLD", value: 100000 },
+    { label: "KHALSA PROPERTY DEALERS TEAM", value: 50 },
+    { label: "HAPPY CUSTOMERS", value: 150000 },
+    { label: "PROJECT HANDLED", value: 25 },
+  ];
+
   return (
     <section
       className="bg-cover bg-center bg-no-repeat py-12 px-6 md:px-20"
@@ -32,18 +108,19 @@ const About: React.FC = () => {
         </div>
 
         {/* Metrics Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:w-1/2">
-          {[
-            { label: "PROPERTY SOLD", value: "100,000+" },
-            { label: "KHALSA PROPERTY DEALERS TEAM", value: "50+" },
-            { label: "HAPPY CUSTOMERS", value: "150,000+" },
-            { label: "PROJECT HANDLED", value: "25+" },
-          ].map((item, index) => (
+        <div
+          ref={metricsRef}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:w-1/2"
+        >
+          {metrics.map((item, index) => (
             <div
               key={index}
               className="bg-gray-100 text-[#D7B865] border border-[#D7B865] p-6 rounded shadow-md text-center"
             >
-              <h3 className="text-2xl font-bold mb-2">{item.value}</h3>
+              <h3 className="text-2xl font-bold mb-2">
+                <CountUp end={item.value} startCounting={startCount} />
+                {item.value > 1000 ? "+" : ""}
+              </h3>
               <p className="text-lg font-semibold">{item.label}</p>
             </div>
           ))}

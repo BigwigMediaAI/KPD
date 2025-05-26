@@ -1,37 +1,66 @@
-import React from "react";
-import { FaEnvelope, FaWhatsapp, FaPhone } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaEnvelope,
+  FaWhatsapp,
+  FaPhone,
+  FaArrowRight,
+  FaArrowLeft,
+} from "react-icons/fa";
 import "../index.css";
 
 const ContactSidebar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
-    <div className="fixed top-1/2 right-0 transform -translate-y-1/2 z-50 flex flex-col items-center rounded-l-xl overflow-hidden shadow-lg">
-      <a
-        href="mailto:info@example.com"
-        className="w-12 h-24 bg-[#c49a58] flex items-center justify-center text-white cursor-pointer"
-      >
-        <div className="flex flex-col items-center justify-center space-y-1">
-          <span className="text-xs rotate-180 writing-vertical">
-            Contact Us
-          </span>
-          <FaEnvelope />
+    <div className="fixed top-1/2 right-0 transform -translate-y-1/2 z-50">
+      {isOpen ? (
+        <div className="flex flex-col items-center rounded-l-xl overflow-hidden shadow-lg transition-all duration-300">
+          {/* Collapse Button */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="w-12 h-14 bg-black flex items-center justify-center text-white cursor-pointer"
+          >
+            <FaArrowRight />
+          </button>
+
+          {/* Contact Options */}
+          <a
+            href="mailto:info@example.com"
+            className="w-12 h-24 bg-[#c49a58] flex items-center justify-center text-white cursor-pointer"
+          >
+            <div className="flex flex-col items-center justify-center space-y-1">
+              <span className="text-xs rotate-180 writing-vertical">
+                Contact Us
+              </span>
+              <FaEnvelope />
+            </div>
+          </a>
+
+          <a
+            href="https://wa.me/+919212717362"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-14 bg-green-500 flex items-center justify-center text-white cursor-pointer"
+          >
+            <FaWhatsapp />
+          </a>
+
+          <a
+            href="tel:+919212717362"
+            className="w-12 h-14 bg-black flex items-center justify-center text-white cursor-pointer"
+          >
+            <FaPhone />
+          </a>
         </div>
-      </a>
-
-      <a
-        href="https://wa.me/1234567890"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-12 h-14 bg-green-500 flex items-center justify-center text-white cursor-pointer"
-      >
-        <FaWhatsapp />
-      </a>
-
-      <a
-        href="tel:+1234567890"
-        className="w-12 h-14 bg-black flex items-center justify-center text-white cursor-pointer"
-      >
-        <FaPhone />
-      </a>
+      ) : (
+        // Minimized version with only left-arrow
+        <button
+          onClick={() => setIsOpen(true)}
+          className="w-10 h-14 bg-black rounded-l-xl flex items-center justify-center text-white shadow-lg cursor-pointer"
+        >
+          <FaArrowLeft />
+        </button>
+      )}
     </div>
   );
 };
