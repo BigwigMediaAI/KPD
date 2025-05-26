@@ -79,7 +79,7 @@ const Testimonials: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="px-4">
+            <div key={index} className="px-10">
               <div className="bg-[#c59b57] rounded-md p-6 text-white flex flex-col justify-between min-h-[250px] h-full">
                 <div>
                   <span className="text-4xl font-serif">“</span>
