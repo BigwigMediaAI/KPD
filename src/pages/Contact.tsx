@@ -1,4 +1,4 @@
-import PhoneInput, { Value } from "react-phone-number-input";
+// import PhoneInput, { Value } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { Mail, MessageSquareText, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -118,7 +118,7 @@ export default function ContactPage() {
 
       <div className="flex flex-col md:flex-row justify-center items-start w-full md:w-[90%] mx-auto px-6 py-8 gap-10 mb-7  ">
         {/* Form Section */}
-        <div className="w-full md:w-1/2 max-w-lg bg-gray-100 rounded-lg p-8 shadow-lg text-left  border border-[#D7B865]">
+        {/* <div className="w-full md:w-1/2 max-w-lg bg-gray-100 rounded-lg p-8 shadow-lg text-left  border border-[#D7B865]">
           <form className="space-y-4">
             <input
               type="text"
@@ -159,10 +159,10 @@ export default function ContactPage() {
               Submit
             </button>
           </form>
-        </div>
+        </div> */}
 
         {/* Map Section */}
-        <div className="w-full md:w-1/2 h-[450px] rounded-lg overflow-hidden shadow-lg border border-[#D7B865]">
+        <div className="w-full h-[450px] rounded-lg overflow-hidden shadow-lg border border-[#D7B865]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.456367506469!2d77.18617288098022!3d28.675992012833134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0278ebc00fbb%3A0x64f8a1ecc1a04cb6!2sKhalsa%20Property%20Dealer!5e0!3m2!1sen!2sin!4v1748007332649!5m2!1sen!2sin"
             width="100%"
