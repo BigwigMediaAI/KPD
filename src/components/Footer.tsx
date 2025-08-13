@@ -12,7 +12,7 @@ import logo from "../assets/logo.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0f0f0f] text-white px-6 py-10 md:px-16 lg:px-24">
+    <footer className="bg-[#0f0f0f] text-white px-6 pt-10 pb-16 md:px-16 lg:px-24">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
         {/* Left Column: Company Info */}
         <div className="flex-1">

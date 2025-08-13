@@ -1,5 +1,5 @@
 import About from "../components/About";
-import ContactSidebar from "../components/ContactSidebar";
+// import ContactSidebar from "../components/ContactSidebar";
 import FeaturedProjects from "../components/FeatureProject";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
@@ -17,7 +17,6 @@ function Landing() {
       <Testimonials />
       <FeaturedProjects />
       <Footer />
-      <ContactSidebar />
     </div>
   );
 }
