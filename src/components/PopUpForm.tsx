@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 interface PopupFormProps {
   onClose: () => void;
@@ -31,10 +32,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
     setStatusMessage("");
 
     try {
-      await axios.post(
-        "https://bigwigdigitalbackend.onrender.com/api/lead/send-otp",
-        formData
-      );
+      await axios.post(`${BASE_URL}/api/lead/send-otp`, formData);
       setStatusMessage("OTP sent! Please check your email.");
       setStep("otp");
     } catch (err: any) {
@@ -54,13 +52,10 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
     setStatusMessage("");
 
     try {
-      await axios.post(
-        "https://bigwigdigitalbackend.onrender.com/api/lead/verify-otp",
-        {
-          email: formData.email,
-          otp,
-        }
-      );
+      await axios.post(`${BASE_URL}/api/lead/verify-otp`, {
+        email: formData.email,
+        otp,
+      });
       setStatusMessage("Lead saved successfully!");
       setTimeout(onClose, 2000);
     } catch (err: any) {

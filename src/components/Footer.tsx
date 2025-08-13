@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   MapPin,
   Mail,
@@ -10,7 +10,43 @@ import {
 } from "lucide-react";
 import logo from "../assets/logo.png";
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const Footer: React.FC = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async () => {
+    if (!email) {
+      setMessage("Please enter a valid email.");
+      return;
+    }
+
+    setLoading(true);
+    setMessage("");
+    console.log(BASE_URL);
+
+    try {
+      const res = await fetch(`${BASE_URL}/subscribe`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) throw new Error("Failed to subscribe");
+
+      setMessage("🎉 Subscription successful!");
+      setEmail("");
+    } catch (error) {
+      setMessage("❌ Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <footer className="bg-[#0f0f0f] text-white px-6 pt-10 pb-16 md:px-16 lg:px-24">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
@@ -32,7 +68,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
 
-        {/* Center Columns: Quick Links + Property Type */}
+        {/* Center Columns */}
         <div className="flex flex-row gap-10 flex-wrap flex-1">
           {/* Quick Links */}
           <div className="min-w-[150px]">
@@ -58,7 +94,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Contact Info */}
+        {/* Right Column */}
         <div className="flex-1">
           <h3 className="font-semibold text-lg mb-3">Contact Info</h3>
           <div className="text-sm space-y-3 text-gray-300">
@@ -90,13 +126,20 @@ const Footer: React.FC = () => {
             <div className="flex flex-col sm:flex-row">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter Your Email Address"
                 className="px-3 py-2 text-black text-sm flex-grow mb-2 sm:mb-0 sm:mr-2"
               />
-              <button className="bg-[#c9a368] text-black font-semibold px-4 py-2">
-                Subscribe
+              <button
+                onClick={handleSubscribe}
+                disabled={loading}
+                className="bg-[#c9a368] text-black font-semibold px-4 py-2 disabled:opacity-50"
+              >
+                {loading ? "Subscribing..." : "Subscribe"}
               </button>
             </div>
+            {message && <p className="mt-2 text-sm">{message}</p>}
           </div>
         </div>
       </div>
