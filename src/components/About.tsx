@@ -79,14 +79,17 @@ const About: React.FC = () => {
 
   return (
     <section
-      className="bg-cover bg-center bg-no-repeat py-12 px-6 md:px-20"
+      className="bg-cover bg-center bg-no-repeat py-12 "
       style={{ backgroundImage: "url('/your-background.jpg')" }}
     >
-      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-start gap-12">
+      <div className="w-11/12 md:w-5/6 mx-auto flex flex-col md:flex-row items-start gap-12">
         {/* Left Text Column */}
         <div className="md:w-1/2 text-white">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#D7B865] mb-6">
-            ABOUT KHALSA PROPERTY DEALERS
+          <h2 className="uppercase tracking-widest text-gray-500 text-md mb-2">
+            ABOUT
+          </h2>
+          <h2 className="text-3xl font-bold text-[#D7B865] mb-6 border-b w-fit">
+            KHALSA PROPERTY DEALERS
           </h2>
           <p className="text-lg leading-relaxed mb-6 text-black text-justify md:text-start">
             KHALSA PROPERTY DEALERS Properties is an accomplished best property
@@ -112,7 +115,7 @@ const About: React.FC = () => {
           {metrics.map((item, index) => (
             <div
               key={index}
-              className="bg-gray-100 text-[#D7B865] border border-[#D7B865] p-6 rounded shadow-md text-center"
+              className="bg-gray-50 text-[#D7B865] border border-[#D7B865] p-6 rounded shadow-md text-center"
             >
               <h3 className="text-2xl font-bold mb-2">
                 <CountUp end={item.value} startCounting={startCount} />

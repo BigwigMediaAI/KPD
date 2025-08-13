@@ -54,41 +54,52 @@ const Testimonials: React.FC = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     slidesToShow: 3,
-    slidesToScroll: 1, // Scroll one by one
+    slidesToScroll: 1,
     responsive: [
-      {
-        breakpoint: 1024, // tablets
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 640, // mobile
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
+    appendDots: (dots: React.ReactNode) => (
+      <div style={{ marginTop: "0px" }}>
+        <ul
+          style={{ margin: "0px", display: "flex", justifyContent: "center" }}
+        >
+          {dots}
+        </ul>
+      </div>
+    ),
+    customPaging: () => (
+      <div
+        style={{
+          width: "10px",
+          height: "10px",
+          borderRadius: "50%",
+          background: "#D7B865",
+        }}
+      />
+    ),
   };
 
   return (
-    <section className="py-16 px-4 bg-white">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#D7B865] mb-6 text-center">
-        WHAT PEOPLE SAYS
+    <section className="py-16 bg-gray-50">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#D7B865] mb-10 text-center">
+        WHAT PEOPLE SAY
       </h2>
-      <div className="max-w-7xl mx-auto">
+      <div className="w-11/12 md:w-5/6 mx-auto">
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="px-10">
-              <div className="bg-[#c59b57] rounded-md p-6 text-white flex flex-col justify-between min-h-[250px] h-full">
+            <div key={index} className="px-4">
+              <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 flex flex-col justify-between min-h-[250px] h-full transition-transform hover:scale-105">
                 <div>
-                  <span className="text-4xl font-serif">“</span>
-                  <p className="mt-2 text-sm leading-relaxed">
+                  <span className="text-5xl font-serif text-[#D7B865] leading-none">
+                    “
+                  </span>
+                  <p className="mt-3 text-gray-700 text-sm leading-relaxed">
                     {testimonial.message}
                   </p>
                 </div>
-                <p className="mt-6 text-sm font-semibold">
-                  by {testimonial.name}
+                <p className="mt-6 text-sm font-semibold text-[#D7B865]">
+                  — {testimonial.name}
                 </p>
               </div>
             </div>

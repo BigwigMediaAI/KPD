@@ -38,17 +38,17 @@ const launches: Launch[] = [
 
 const LatestLaunches: React.FC = () => {
   return (
-    <section className="px-4 md:px-12 lg:px-20 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+    <section className=" py-12">
+      <div className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
         {/* Left Text Section */}
         <div>
           <p className="uppercase tracking-widest text-gray-500 text-sm mb-2">
             Properties
           </p>
-          <h2 className="text-3xl md:text-4xl font-light mb-4">
+          <h2 className="text-3xl font-bold text-[#D7B865] mb-6 border-b w-fit">
             LATEST LAUNCHES
           </h2>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-lg leading-relaxed mb-6 text-black text-justify md:text-start">
             Each of our properties have their own unique design aesthetics,
             providing an aspirational lifestyle within a thriving community
             which is supported by Emaar’s community management team.

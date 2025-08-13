@@ -36,35 +36,39 @@ const projects: Project[] = [
 
 const FeaturedProjects: React.FC = () => {
   return (
-    <section className="px-4 md:px-12 lg:px-20 py-10">
+    <section className=" py-10">
       {/* Section Title */}
-      <div className="mb-8">
-        <p className="uppercase tracking-widest text-gray-500 text-sm">
-          Projects
-        </p>
-        <h2 className="text-3xl md:text-4xl font-light border-b border-gray-200 pb-2 inline-block">
-          FEATURED PROJECTS
-        </h2>
-      </div>
+      <div className="w-11/12 md:w-5/6 mx-auto">
+        <div className="mb-8">
+          <p className="uppercase tracking-widest text-gray-500 text-md">
+            Projects
+          </p>
+          <h2 className="text-3xl font-bold text-[#D7B865] mb-6 border-b w-fit">
+            FEATURED PROJECTS
+          </h2>
+        </div>
 
-      {/* Projects Grid / Slider */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {projects.map((project, idx) => (
-          <div key={idx} className="flex flex-col">
-            <div className="aspect-[4/5] overflow-hidden">
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
+        {/* Projects Grid / Slider */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {projects.map((project, idx) => (
+            <div key={idx} className="flex flex-col">
+              <div className="aspect-[4/5] overflow-hidden">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold">{project.title}</h3>
+              <p className="uppercase tracking-widest text-xs text-gray-500 mt-1">
+                {project.tagline}
+              </p>
+              <p className="text-sm text-gray-700 mt-1">
+                {project.description}
+              </p>
             </div>
-            <h3 className="mt-4 text-lg font-semibold">{project.title}</h3>
-            <p className="uppercase tracking-widest text-xs text-gray-500 mt-1">
-              {project.tagline}
-            </p>
-            <p className="text-sm text-gray-700 mt-1">{project.description}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
