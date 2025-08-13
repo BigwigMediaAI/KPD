@@ -12,7 +12,7 @@ export default function ContactPage() {
     <div className=" bg-white min-h-screen text-black">
       <Navbar />
 
-      <section className="w-full md:w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 py-8  mt-20 md:mt-32">
+      <section className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-8  mt-20 md:mt-32">
         <div className="pt-4">
           <h2 className="text-2xl mb-2 font-semibold">Dubai</h2>
           <hr />
@@ -106,19 +106,20 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <h2 className="px-5 w-full md:w-[90%] mx-auto text-lg text-[var(--secondary-color)]">
-        Have questions, need marketing advice, or interested in growing your
-        brand online?
-      </h2>
-      <p className="px-5 w-full md:w-[90%] mx-auto text-md text-gray-400">
-        Reach out to us via email, phone, or simply fill out the form below.
-        Your inquiry will be directed to the right Bigwig Digital marketing
-        expert, and we’ll get back to you within 24 hours.
-      </p>
+      <div className="w-11/12 md:w-5/6 mx-auto">
+        <h2 className="  text-lg text-[var(--secondary-color)]">
+          Have questions, need marketing advice, or interested in growing your
+          brand online?
+        </h2>
+        <p className=" text-md text-gray-400">
+          Reach out to us via email, phone, or simply fill out the form below.
+          Your inquiry will be directed to the right Bigwig Digital marketing
+          expert, and we’ll get back to you within 24 hours.
+        </p>
 
-      <div className="flex flex-col md:flex-row justify-center items-start w-full md:w-[90%] mx-auto px-6 py-8 gap-10 mb-7  ">
-        {/* Form Section */}
-        {/* <div className="w-full md:w-1/2 max-w-lg bg-gray-100 rounded-lg p-8 shadow-lg text-left  border border-[#D7B865]">
+        <div className="flex flex-col md:flex-row justify-center items-start py-8 gap-10 mb-7  ">
+          {/* Form Section */}
+          {/* <div className="w-full md:w-1/2 max-w-lg bg-gray-100 rounded-lg p-8 shadow-lg text-left  border border-[#D7B865]">
           <form className="space-y-4">
             <input
               type="text"
@@ -161,17 +162,18 @@ export default function ContactPage() {
           </form>
         </div> */}
 
-        {/* Map Section */}
-        <div className="w-full h-[450px] rounded-lg overflow-hidden shadow-lg border border-[#D7B865]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.456367506469!2d77.18617288098022!3d28.675992012833134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0278ebc00fbb%3A0x64f8a1ecc1a04cb6!2sKhalsa%20Property%20Dealer!5e0!3m2!1sen!2sin!4v1748007332649!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full"
-          ></iframe>
+          {/* Map Section */}
+          <div className="w-full h-[450px] rounded-lg overflow-hidden shadow-lg border border-[#D7B865]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.456367506469!2d77.18617288098022!3d28.675992012833134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0278ebc00fbb%3A0x64f8a1ecc1a04cb6!2sKhalsa%20Property%20Dealer!5e0!3m2!1sen!2sin!4v1748007332649!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            ></iframe>
+          </div>
         </div>
       </div>
       <Footer />
