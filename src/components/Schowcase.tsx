@@ -1,5 +1,6 @@
-import React from "react";
 import img1 from "/C-829a_Elevation_View (1).jpg";
+import React, { useState } from "react";
+import PopupForm from "./PopUpForm";
 
 interface Launch {
   img: string;
@@ -38,6 +39,7 @@ const launches: Launch[] = [
 ];
 
 const LatestLaunches: React.FC = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
     <section className=" py-12">
       <div className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -54,6 +56,12 @@ const LatestLaunches: React.FC = () => {
             providing an aspirational lifestyle within a thriving community
             which is supported by Emaar’s community management team.
           </p>
+          <button
+            onClick={() => setIsPopupOpen(true)}
+            className="px-6 py-2 bg-[#D7B865] text-white rounded hover:bg-[#bfa14f] transition-colors"
+          >
+            Contact Us
+          </button>
         </div>
 
         {/* Right Image Layout */}
@@ -84,6 +92,7 @@ const LatestLaunches: React.FC = () => {
           ))}
         </div>
       </div>
+      {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}
     </section>
   );
 };
