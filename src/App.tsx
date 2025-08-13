@@ -5,6 +5,7 @@ import ContactPage from "./pages/Contact";
 import About from "./pages/Aboutus";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import ContactSidebar from "./components/ContactSidebar";
+import Products from "./pages/Projects";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Products />} />
       </Routes>
 
       <div className="fixed bottom-0 left-0 w-full flex md:hidden z-[9999]">
