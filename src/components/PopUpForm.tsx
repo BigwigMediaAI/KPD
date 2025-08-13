@@ -82,7 +82,9 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
         <h2 className="text-xl font-bold text-center mb-1 text-white">
           Let's Grow Together!
         </h2>
-        <p className="text-center mb-4 text-white">Request a FREE Call!</p>
+        <p className="text-center mb-4 text-white">
+          Have a question or request? Ask us anything!
+        </p>
 
         {step === "form" ? (
           <form className="space-y-3" onSubmit={handleSendOtp}>
