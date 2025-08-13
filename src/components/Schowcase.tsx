@@ -1,3 +1,4 @@
+import img1 from "/C-829a_Elevation_View (1).jpg";
 import React, { useState } from "react";
 import PopupForm from "./PopUpForm";
 
@@ -10,7 +11,7 @@ interface Launch {
 
 const launches: Launch[] = [
   {
-    img: "https://cdn.in.emaar.com/wp-content/uploads/2024/12/elite_oasis_portrait.jpg",
+    img: img1,
     title: "ELITE OASIS",
     subtitle: "ELITE OASIS",
     large: true,
