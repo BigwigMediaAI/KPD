@@ -8,19 +8,21 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       {/* Top Bar */}
-      <div className="bg-[#c9a368] text-white text-sm px-4 py-1 flex justify-end items-center space-x-4">
-        <div className="flex items-center space-x-1">
-          <span className="text-xs">📞</span>
-          <span>+91-9212717362</span>
-        </div>
-        <div className="flex items-center space-x-1">
-          <span className="text-xs">✉️</span>
-          <span>info@kpd.co</span>
+      <div className="bg-[#c9a368] text-white  ">
+        <div className="text-sm py-1 flex justify-end items-center space-x-4 w-11/12 md:w-5/6 mx-auto">
+          <div className="flex items-center space-x-1">
+            <span className="text-xs">📞</span>
+            <span>+91-9212717362</span>
+          </div>
+          <div className="flex items-center space-x-1">
+            <span className="text-xs">✉️</span>
+            <span>info@kpd.co</span>
+          </div>
         </div>
       </div>
 
       {/* Main Header */}
-      <div className=" flex items-center justify-between px-4 py-3 md:px-10">
+      <div className=" flex items-center justify-between py-3 w-11/12 md:w-5/6 mx-auto">
         {/* Logo */}
         <div className="flex-1 text-center md:text-left">
           <a href="/">

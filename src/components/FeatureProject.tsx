@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface Project {
   img: string;
@@ -35,24 +38,55 @@ const projects: Project[] = [
 ];
 
 const FeaturedProjects: React.FC = () => {
+  const sliderRef = useRef<Slider>(null);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false, // hide default arrows
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+    ],
+  };
+
   return (
-    <section className=" py-10">
-      {/* Section Title */}
+    <section className="py-10">
       <div className="w-11/12 md:w-5/6 mx-auto">
-        <div className="mb-8">
-          <p className="uppercase tracking-widest text-gray-500 text-md">
-            Projects
-          </p>
-          <h2 className="text-3xl font-bold text-[#D7B865] mb-6 border-b w-fit">
-            FEATURED PROJECTS
-          </h2>
+        {/* Title + Arrows */}
+        <div className="mb-8 flex justify-between items-center">
+          <div>
+            <p className="uppercase tracking-widest text-gray-500 text-md">
+              Projects
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#D7B865] border-b w-fit">
+              FEATURED PROJECTS
+            </h2>
+          </div>
+          <div className="flex gap-3">
+            <button
+              onClick={() => sliderRef.current?.slickPrev()}
+              className="text-[#D7B865] text-3xl md:text-5xl"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => sliderRef.current?.slickNext()}
+              className="text-[#D7B865] text-3xl md:text-5xl"
+            >
+              →
+            </button>
+          </div>
         </div>
 
-        {/* Projects Grid / Slider */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Slider */}
+        <Slider ref={sliderRef} {...settings}>
           {projects.map((project, idx) => (
-            <div key={idx} className="flex flex-col">
-              <div className="aspect-[4/5] overflow-hidden">
+            <div key={idx} className="px-3">
+              <div className="aspect-[4/5] overflow-hidden rounded-md">
                 <img
                   src={project.img}
                   alt={project.title}
@@ -68,7 +102,7 @@ const FeaturedProjects: React.FC = () => {
               </p>
             </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </section>
   );
