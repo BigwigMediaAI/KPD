@@ -39,9 +39,9 @@ const Navbar: React.FC = () => {
         <nav className="hidden md:flex space-x-6 text-[#04365b] font-medium">
           <a href="/">HOME</a>
           <a href="/about">ABOUT US</a>
-          <a href="#">PROJECTS</a>
+          <a href="/projects">PROJECTS</a>
 
-          <a href="#">BLOGS</a>
+          {/* <a href="#">BLOGS</a> */}
           <a href="/contact">CONTACT US</a>
         </nav>
 
