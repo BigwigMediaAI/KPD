@@ -6,6 +6,10 @@ import About from "./pages/Aboutus";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import ContactSidebar from "./components/ContactSidebar";
 import Products from "./pages/Projects";
+import AdminLead from "./pages/admin/AdminLead";
+import AdminLayout from "./pages/admin/AdminLayout";
+import Dashboard from "./pages/admin/Dashboard";
+import AdminSubscriber from "./pages/admin/AdminSubscriber";
 
 function App() {
   return (
@@ -15,6 +19,12 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Products />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+
+          <Route path="leads" element={<AdminLead />} />
+          <Route path="subscribers" element={<AdminSubscriber />} />
+        </Route>
       </Routes>
 
       <div className="fixed bottom-0 left-0 w-full flex md:hidden z-[9999]">
