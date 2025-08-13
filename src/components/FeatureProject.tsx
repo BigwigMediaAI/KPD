@@ -2,6 +2,10 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import img1 from "/IMG-20211025-WA0004 (1).jpg";
+import img2 from "/IMG-20211025-WA0005.jpg";
+import img3 from "/IMG-20211025-WA0006 (1).jpg";
+import img4 from "/J-3-10_Elevation_View_2nd_Option (1).jpg";
 
 interface Project {
   img: string;
@@ -12,25 +16,25 @@ interface Project {
 
 const projects: Project[] = [
   {
-    img: "https://cdn.in.emaar.com/wp-content/uploads/2025/01/Featured-Image-2-320x415.jpg",
+    img: img1,
     title: "ELITE OASIS",
     tagline: "AN OASIS OF LUXURY",
     description: "3 & 4 BHK residences",
   },
   {
-    img: "https://cdn.in.emaar.com/wp-content/uploads/2024/10/Featured-Image-320-415-Revised.jpg",
+    img: img2,
     title: "URBAN ASCENT, GURUGRAM",
     tagline: "RISE ABOVE THE ORDINARY",
     description: "3 & 4 BHK residences",
   },
   {
-    img: "https://cdn.in.emaar.com/wp-content/uploads/2024/10/Entry-Gate-View-320x415-1.jpg",
+    img: img3,
     title: "AMARIS, GURUGRAM",
     tagline: "A MEANINGFUL LIFE STARTS HERE.",
     description: "2, 3 & 4 BHK Residences",
   },
   {
-    img: "https://cdn.in.emaar.com/wp-content/uploads/2024/03/Featured-Image-320-415-Portrait-03.jpg",
+    img: img4,
     title: "CASA VENERO, ALIBAG",
     tagline: "HAVEN OF PURE LEISURE",
     description: "4 and 5 BHK Luxury Villas",
@@ -90,7 +94,7 @@ const FeaturedProjects: React.FC = () => {
                 <img
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-fill hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <h3 className="mt-4 text-lg font-semibold">{project.title}</h3>
