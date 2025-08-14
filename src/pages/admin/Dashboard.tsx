@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaPhoneAlt, FaBook } from "react-icons/fa";
+import { FaBook, FaUserPlus, FaUser } from "react-icons/fa";
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
@@ -12,17 +12,20 @@ const Dashboard = () => {
   const [counts, setCounts] = useState({
     leads: 0,
     subscribers: 0,
+    blogs: 0,
   });
 
   useEffect(() => {
     Promise.all([
       fetch(`${baseURL}/api/lead/all`).then((r) => r.json()),
       fetch(`${baseURL}/subscribers`).then((r) => r.json()),
+      fetch(`${baseURL}/viewblog`).then((r) => r.json()),
     ])
-      .then(([leads, subscribers]) => {
+      .then(([leads, subscribers, blogs]) => {
         setCounts({
           leads: Array.isArray(leads) ? leads.length : 0,
           subscribers: Array.isArray(subscribers) ? subscribers.length : 0,
+          blogs: Array.isArray(blogs) ? blogs.length : 0,
         });
       })
       .catch((error) => {
@@ -31,8 +34,9 @@ const Dashboard = () => {
   }, []);
 
   const cards = [
-    { title: "Leads", icon: <FaPhoneAlt />, count: counts.leads },
-    { title: "Subscriber", icon: <FaBook />, count: counts.subscribers },
+    { title: "Leads", icon: <FaUser />, count: counts.leads },
+    { title: "Subscriber", icon: <FaUserPlus />, count: counts.subscribers },
+    { title: "Blogs", icon: <FaBook />, count: counts.blogs },
   ];
 
   return (

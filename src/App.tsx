@@ -12,6 +12,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import AdminSubscriber from "./pages/admin/AdminSubscriber";
 import Blogs from "./pages/Blogs";
 import BlogDetails from "./pages/BlogDetails";
+import AdminBlog from "./pages/admin/AdminBlog";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
 
           <Route path="leads" element={<AdminLead />} />
           <Route path="subscribers" element={<AdminSubscriber />} />
+          <Route path="blogs" element={<AdminBlog />} />
         </Route>
       </Routes>
 
