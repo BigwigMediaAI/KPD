@@ -103,7 +103,7 @@ const About: React.FC = () => {
             home or selling, we’ll help you make the most informed decision.
           </p>
           <a
-            href="#"
+            href="/about"
             className="inline-block bg-[#D7B865] text-white font-semibold py-2 px-6 rounded shadow-md"
           >
             Read More

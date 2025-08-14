@@ -67,7 +67,7 @@ const LatestLaunches: React.FC = () => {
         {/* Right Image Layout */}
         <div
           className="lg:col-span-2 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          style={{ gridAutoRows: "250px" }} // set consistent row height
+          style={{ gridAutoRows: "250px" }} // consistent row height
         >
           {launches.map((item, idx) => (
             <div
@@ -76,18 +76,27 @@ const LatestLaunches: React.FC = () => {
                 item.large ? "row-span-2" : "row-span-1"
               } flex flex-col`}
             >
-              <div className="overflow-hidden h-full">
+              {/* Image container with fixed height for normal cards */}
+              <div
+                className={`overflow-hidden ${
+                  item.large ? "h-full" : "h-[250px]"
+                }`}
+              >
                 <img
                   src={item.img}
                   alt={item.title}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <p className="mt-3 text-sm font-medium tracking-wide uppercase">
-                {item.title}{" "}
-                <span className="text-gray-500">| {item.subtitle}</span>
-              </p>
-              <div className="w-12 border-t border-gray-300 mt-1"></div>
+
+              {/* Text below image */}
+              <div className="mt-3">
+                <p className="text-sm font-medium tracking-wide uppercase">
+                  {item.title}
+                </p>
+                <p className="text-xs text-gray-500">{item.subtitle}</p>
+                <div className="w-12 border-t border-gray-300 mt-1"></div>
+              </div>
             </div>
           ))}
         </div>
