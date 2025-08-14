@@ -66,20 +66,20 @@ const FeaturedProjects: React.FC = () => {
             <p className="uppercase tracking-widest text-gray-500 text-md">
               Projects
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#D7B865] border-b w-fit">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--primary-color)] border-b w-fit">
               FEATURED PROJECTS
             </h2>
           </div>
           <div className="flex gap-3">
             <button
               onClick={() => sliderRef.current?.slickPrev()}
-              className="text-[#D7B865] text-3xl md:text-5xl"
+              className="text-[var(--primary-color)] text-3xl md:text-5xl"
             >
               ←
             </button>
             <button
               onClick={() => sliderRef.current?.slickNext()}
-              className="text-[#D7B865] text-3xl md:text-5xl"
+              className="text-[var(--primary-color)] text-3xl md:text-5xl"
             >
               →
             </button>

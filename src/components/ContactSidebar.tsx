@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import {
   FaEnvelope,
   FaWhatsapp,
-  FaPhone,
   FaArrowRight,
   FaArrowLeft,
+  FaPhoneAlt,
 } from "react-icons/fa";
 import "../index.css";
 
@@ -49,7 +49,7 @@ const ContactSidebar: React.FC = () => {
             href="tel:+919212717362"
             className="w-12 h-14 bg-black flex items-center justify-center text-white cursor-pointer"
           >
-            <FaPhone />
+            <FaPhoneAlt />
           </a>
         </div>
       ) : (

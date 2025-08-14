@@ -48,7 +48,7 @@ const LatestLaunches: React.FC = () => {
           <p className="uppercase tracking-widest text-gray-500 text-sm mb-2">
             Properties
           </p>
-          <h2 className="text-3xl font-bold text-[#D7B865] mb-6 border-b w-fit">
+          <h2 className="text-3xl font-bold text-[var(--primary-color)] mb-6 border-b w-fit">
             LATEST LAUNCHES
           </h2>
           <p className="text-lg leading-relaxed mb-6 text-black text-justify md:text-start">
@@ -58,7 +58,7 @@ const LatestLaunches: React.FC = () => {
           </p>
           <button
             onClick={() => setIsPopupOpen(true)}
-            className="px-6 py-2 bg-[#D7B865] text-white rounded hover:bg-[#bfa14f] transition-colors"
+            className="px-6 py-2 bg-[var(--primary-color)] text-white rounded hover:bg-[#bfa14f] transition-colors"
           >
             Contact Us
           </button>

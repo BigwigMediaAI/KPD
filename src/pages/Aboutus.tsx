@@ -93,7 +93,7 @@ const About: React.FC = () => {
         </section>
       </div>
 
-      <div className="bg-[#D7B865] text-white text-center py-10 px-4 mt-12">
+      <div className="bg-[var(--primary-color)] text-white text-center py-10 px-4 mt-12">
         <h2 className="text-3xl font-bold mb-4">
           Ready to Start Your Dream Project?
         </h2>
@@ -103,7 +103,7 @@ const About: React.FC = () => {
         </p>
         <button
           onClick={() => setIsPopupOpen(true)}
-          className="bg-white text-[#D7B865] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+          className="bg-white text-[var(--primary-color)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
           Get Started
         </button>

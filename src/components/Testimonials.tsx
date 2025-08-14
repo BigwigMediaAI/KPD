@@ -74,7 +74,7 @@ const Testimonials: React.FC = () => {
           width: "10px",
           height: "10px",
           borderRadius: "50%",
-          background: "#D7B865",
+          background: "var(--primary-color)",
         }}
       />
     ),
@@ -82,7 +82,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#D7B865] mb-10 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] mb-10 text-center">
         WHAT PEOPLE SAY
       </h2>
       <div className="w-11/12 md:w-5/6 mx-auto">
@@ -91,14 +91,14 @@ const Testimonials: React.FC = () => {
             <div key={index} className="px-4">
               <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 flex flex-col justify-between min-h-[250px] h-full transition-transform hover:scale-105">
                 <div>
-                  <span className="text-5xl font-serif text-[#D7B865] leading-none">
+                  <span className="text-5xl font-serif text-[var(--primary-color)] leading-none">
                     “
                   </span>
                   <p className="mt-3 text-gray-700 text-sm leading-relaxed">
                     {testimonial.message}
                   </p>
                 </div>
-                <p className="mt-6 text-sm font-semibold text-[#D7B865]">
+                <p className="mt-6 text-sm font-semibold text-[var(--primary-color)]">
                   — {testimonial.name}
                 </p>
               </div>
