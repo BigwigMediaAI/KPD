@@ -10,6 +10,8 @@ import AdminLead from "./pages/admin/AdminLead";
 import AdminLayout from "./pages/admin/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
 import AdminSubscriber from "./pages/admin/AdminSubscriber";
+import Blogs from "./pages/Blogs";
+import BlogDetails from "./pages/BlogDetails";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Products />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:slug" element={<BlogDetails />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
 

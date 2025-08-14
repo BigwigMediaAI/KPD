@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
           <a href="/about">ABOUT US</a>
           <a href="/projects">PROJECTS</a>
 
-          {/* <a href="#">BLOGS</a> */}
+          <a href="/blogs">BLOGS</a>
           <a href="/contact">CONTACT US</a>
         </nav>
 
@@ -73,9 +73,9 @@ const Navbar: React.FC = () => {
           <a href="/projects" className="block">
             PROJECTS
           </a>
-          {/* <a href="#" className="block">
+          <a href="/blogs" className="block">
             BLOGS
-          </a> */}
+          </a>
           <a href="/contact" className="block">
             CONTACT US
           </a>
