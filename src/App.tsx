@@ -13,6 +13,9 @@ import AdminSubscriber from "./pages/admin/AdminSubscriber";
 import Blogs from "./pages/Blogs";
 import BlogDetails from "./pages/BlogDetails";
 import AdminBlog from "./pages/admin/AdminBlog";
+import Buy from "./pages/Buy";
+import Sell from "./pages/Sell";
+import OffPlan from "./pages/OffPlan";
 
 function App() {
   return (
@@ -22,6 +25,10 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Products />} />
+        <Route path="/buy-properties" element={<Buy />} />
+        <Route path="/sell-properties" element={<Sell />} />
+        <Route path="/offplan-properties" element={<OffPlan />} />
+
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:slug" element={<BlogDetails />} />
         <Route path="/admin" element={<AdminLayout />}>

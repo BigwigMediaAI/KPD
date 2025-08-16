@@ -1,14 +1,24 @@
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const currentPath = window.location.pathname; // ✅ detect current page
+  const [propertyOpen, setPropertyOpen] = useState(false); // dropdown toggle
+  const currentPath = window.location.pathname;
 
   const links = [
     { label: "HOME", href: "/" },
     { label: "ABOUT US", href: "/about" },
+
+    {
+      label: "PROPERTY",
+      dropdown: [
+        { label: "BUY", href: "/buy-properties" },
+        { label: "SELL", href: "/sell-properties" },
+        { label: "OFF-PLAN", href: "/offplan-properties" },
+      ],
+    },
     { label: "PROJECTS", href: "/projects" },
     { label: "BLOGS", href: "/blogs" },
     { label: "CONTACT US", href: "/contact" },
@@ -45,20 +55,45 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6 text-[#04365b] font-medium text-md ">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`transition-colors ${
-                currentPath === link.href
-                  ? " border-b-2 border-[var(--secondary-color)] pb-1" // ✅ active style
-                  : "hover:text-[var(--primary-color)]"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+        <nav className="hidden md:flex space-x-6 text-[#04365b] font-medium text-md relative">
+          {links.map((link) =>
+            link.dropdown ? (
+              <div key={link.label} className="relative group">
+                <button className="flex items-center space-x-1 hover:text-[var(--primary-color)]">
+                  <span>{link.label}</span>
+                  <ChevronDown size={16} />
+                </button>
+                {/* Dropdown Menu */}
+                <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  {link.dropdown.map((sublink) => (
+                    <a
+                      key={sublink.href}
+                      href={sublink.href}
+                      className={`block px-4 py-2 whitespace-nowrap ${
+                        currentPath === sublink.href
+                          ? "bg-gray-100"
+                          : "hover:bg-gray-100"
+                      }`}
+                    >
+                      {sublink.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`transition-colors ${
+                  currentPath === link.href
+                    ? "border-b-2 border-[var(--secondary-color)] pb-1"
+                    : "hover:text-[var(--primary-color)]"
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -80,19 +115,53 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2 text-[#04365b] font-medium">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`block ${
-                currentPath === link.href
-                  ? "text-[#c9a368] font-bold" // ✅ highlight active
-                  : "hover:text-[#c9a368]"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) =>
+            link.dropdown ? (
+              <div key={link.label}>
+                <button
+                  onClick={() => setPropertyOpen(!propertyOpen)}
+                  className="flex justify-between w-full items-center"
+                >
+                  {link.label}
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform ${
+                      propertyOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {propertyOpen && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    {link.dropdown.map((sublink) => (
+                      <a
+                        key={sublink.href}
+                        href={sublink.href}
+                        className={`block ${
+                          currentPath === sublink.href
+                            ? "text-[var(--secondary-color)] font-bold"
+                            : "hover:text-[#c9a368]"
+                        }`}
+                      >
+                        {sublink.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`block ${
+                  currentPath === link.href
+                    ? "text-[var(--secondary-color)] font-bold"
+                    : "hover:text-[#c9a368]"
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
       )}
     </header>
