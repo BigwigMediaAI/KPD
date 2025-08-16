@@ -67,10 +67,10 @@ const About: React.FC = () => {
   }, []);
 
   const metrics = [
-    { label: "Properties Sold", value: 100000 },
-    { label: "Khalsa Team Members", value: 50 },
-    { label: "Happy Customers", value: 150000 },
-    { label: "Projects Completed", value: 25 },
+    { label: "Properties Sold", value: 100 },
+    { label: "Khalsa Team Members", value: 20 },
+    { label: "Happy Customers", value: 2000 },
+    { label: "Projects Completed", value: 65 },
   ];
 
   return (
@@ -89,16 +89,15 @@ const About: React.FC = () => {
             <strong>Khalsa Property Dealers</strong> is one of Delhi’s most
             trusted real estate firms, operational in{" "}
             <strong>Rohini and Pitampura </strong>
-            since 1982. With 35+ years of experience and 8+ offices across Delhi
+            since 2007. With 18+ years of experience and 3+ offices across Delhi
             NCR, we have built a legacy of delivering dream homes on time.
             <br />
             <br />
-            We believe a home is more than four walls—it’s a lifestyle. Every
-            property is{" "}
-            <strong>developed and sold by our own dedicated team</strong>,
-            ensuring unmatched quality, transparency, and trust. Whether you’re
-            buying or selling, we empower you to make the best decision for your
-            future.
+            We believe a home is more than just four walls. With over 65
+            successful projects across India and a portfolio of 2,000+ valued
+            clients, our footprint now extends to Goa and Dubai. We specialize
+            in creating high-value investment opportunities designed to maximize
+            returns in minimal time.
           </p>
 
           <a
@@ -118,7 +117,7 @@ const About: React.FC = () => {
             >
               <h3 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] mb-2">
                 <CountUp end={item.value} startCounting={startCount} />
-                {item.value > 1000 ? "+" : ""}
+                {item.value > 1000 ? "+" : "+"}
               </h3>
               <p className="text-base md:text-lg font-semibold text-gray-600 font-annie">
                 {item.label}

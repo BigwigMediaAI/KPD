@@ -26,7 +26,7 @@ const ContactSidebar: React.FC = () => {
           {/* Contact Options */}
           <a
             href="mailto:info@example.com"
-            className="w-12 h-24 bg-[#c49a58] flex items-center justify-center text-white cursor-pointer"
+            className="w-12 h-24 bg-[var(--primary-color)] flex items-center justify-center text-white cursor-pointer"
           >
             <div className="flex flex-col items-center justify-center space-y-1">
               <span className="text-xs rotate-180 writing-vertical">

@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       {/* Top Bar */}
-      <div className="bg-[#c9a368] text-white">
+      <div className="bg-[var(--primary-color)] text-white">
         <div className="text-sm py-1 flex justify-end items-center space-x-4 w-11/12 md:w-5/6 mx-auto">
           <div className="flex items-center space-x-1">
             <span className="text-xs">📞</span>
@@ -45,15 +45,15 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6 text-[#04365b] font-medium text-xl font-annie">
+        <nav className="hidden md:flex space-x-6 text-[#04365b] font-medium text-md ">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className={`transition-colors ${
                 currentPath === link.href
-                  ? "text-[#c9a368] border-b-2 border-[#c9a368] pb-1" // ✅ active style
-                  : "hover:text-[#c9a368]"
+                  ? " border-b-2 border-[var(--secondary-color)] pb-1" // ✅ active style
+                  : "hover:text-[var(--primary-color)]"
               }`}
             >
               {link.label}

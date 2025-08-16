@@ -3,35 +3,27 @@ import ContactSidebar from "../components/ContactSidebar";
 import Footer from "../components/Footer";
 import Navbar from "../components/Nav";
 import PopupForm from "../components/PopUpForm";
-import img1 from "/IMG-20211025-WA0004 (1).jpg";
-import img2 from "/IMG-20211025-WA0005.jpg";
-import img3 from "/IMG-20211025-WA0006 (1).jpg";
-import img4 from "/J-3-10_Elevation_View_2nd_Option (1).jpg";
+import img1 from "../assets/IMG-20211025-WA0004 (1).jpg";
+import img2 from "../assets/IMG-20211025-WA0005.jpg";
+import img3 from "../assets/IMG-20211025-WA0006 (1).jpg";
+import img4 from "../assets/J-3-10_Elevation_View_2nd_Option (1).jpg";
 
 const projects = [
   {
     img: img1,
-    title: "ELITE OASIS",
-    tagline: "AN OASIS OF LUXURY",
-    description: "3 & 4 BHK residences",
+    title: "3, Sanjay Nagar, Gulabi Bagh",
   },
   {
     img: img2,
-    title: "URBAN ASCENT, GURUGRAM",
-    tagline: "RISE ABOVE THE ORDINARY",
-    description: "3 & 4 BHK residences",
+    title: "4, Sanjay Nagar, Gulabi Bagh",
   },
   {
     img: img3,
-    title: "AMARIS, GURUGRAM",
-    tagline: "A MEANINGFUL LIFE STARTS HERE.",
-    description: "2, 3 & 4 BHK Residences",
+    title: "P-3/15, DLF-II",
   },
   {
     img: img4,
-    title: "CASA VENERO, ALIBAG",
-    tagline: "HAVEN OF PURE LEISURE",
-    description: "4 and 5 BHK Luxury Villas",
+    title: "J-3/10, DLF-II",
   },
 ];
 
@@ -42,34 +34,28 @@ function Projects() {
       <Navbar />
 
       {/* Page Header */}
-      <section className="bg-[var(--primary-color)] py-12 mt-28 text-center text-white">
+      <section className=" py-12 mt-28 text-center text-black">
         <h1 className="text-3xl font-bold">Our Projects</h1>
         <p className="mt-2 text-lg">Explore our exclusive developments</p>
       </section>
 
       {/* Projects Grid */}
-      <section className="w-11/12 md:w-5/6 mx-auto py-12">
+      <section className="w-11/12 md:w-5/6 mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {projects.map((project, idx) => (
             <div
               key={idx}
               className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className=" overflow-hidden">
                 <img
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-[380px] object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-4">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-                <p className="uppercase tracking-widest text-xs text-gray-500 mt-1">
-                  {project.tagline}
-                </p>
-                <p className="text-sm text-gray-700 mt-1">
-                  {project.description}
-                </p>
+                <h3 className="text-md ">{project.title}</h3>
               </div>
             </div>
           ))}
