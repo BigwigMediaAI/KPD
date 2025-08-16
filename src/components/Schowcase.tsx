@@ -48,13 +48,14 @@ const LatestLaunches: React.FC = () => {
           <p className="uppercase tracking-widest text-gray-500 text-sm mb-2">
             Properties
           </p>
-          <h2 className="text-3xl font-bold text-[var(--primary-color)] mb-6 border-b w-fit">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
             LATEST LAUNCHES
           </h2>
-          <p className="text-lg leading-relaxed mb-6 text-black text-justify md:text-start">
-            Each of our properties have their own unique design aesthetics,
-            providing an aspirational lifestyle within a thriving community
-            which is supported by Emaar’s community management team.
+          <p className="text-lg leading-relaxed mb-6 text-gray-700  text-justify">
+            Each of our properties reflects unique design aesthetics, offering
+            an aspirational lifestyle within a thriving community. All projects
+            are exclusively developed and sold by Khalsa Property’s own team,
+            ensuring complete ownership and commitment from start to finish.
           </p>
           <button
             onClick={() => setIsPopupOpen(true)}

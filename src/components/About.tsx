@@ -55,73 +55,74 @@ const About: React.FC = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setStartCount(true);
-            observer.disconnect(); // start once
+            observer.disconnect();
           }
         });
       },
-      {
-        threshold: 0.3, // 30% of element visible triggers animation
-      }
+      { threshold: 0.3 }
     );
 
     observer.observe(metricsRef.current);
-
     return () => observer.disconnect();
   }, []);
 
-  // Define your data with numeric values
   const metrics = [
-    { label: "PROPERTY SOLD", value: 100000 },
-    { label: "KHALSA PROPERTY DEALERS TEAM", value: 50 },
-    { label: "HAPPY CUSTOMERS", value: 150000 },
-    { label: "PROJECT HANDLED", value: 25 },
+    { label: "Properties Sold", value: 100000 },
+    { label: "Khalsa Team Members", value: 50 },
+    { label: "Happy Customers", value: 150000 },
+    { label: "Projects Completed", value: 25 },
   ];
 
   return (
-    <section
-      className="bg-cover bg-center bg-no-repeat py-12 "
-      style={{ backgroundImage: "url('/your-background.jpg')" }}
-    >
-      <div className="w-11/12 md:w-5/6 mx-auto flex flex-col md:flex-row items-start gap-12">
-        {/* Left Text Column */}
-        <div className="md:w-1/2 text-white">
-          <h2 className="uppercase tracking-widest text-gray-500 text-md mb-2">
-            ABOUT
+    <section className="relative py-16 bg-gradient-to-r from-gray-50 via-white to-gray-100">
+      <div className="w-11/12 md:w-5/6 mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* Left Content */}
+        <div>
+          <h2 className="uppercase tracking-widest text-gray-500 text-sm mb-2">
+            About Us
           </h2>
-          <h2 className="text-3xl font-bold text-[var(--primary-color)] mb-6 border-b w-fit">
-            KHALSA PROPERTY DEALERS
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+            Khalsa Property Dealers
           </h2>
-          <p className="text-lg leading-relaxed mb-6 text-black text-justify md:text-start">
-            KHALSA PROPERTY DEALERS Properties is an accomplished best property
-            dealer in Delhi operational in
-            <strong> Rohini and Pitampura, New Delhi</strong> since 1982. With
-            35+ years of experience and 8+ offices in Delhi and NCR, we’ve
-            delivered millions of projects on time. We believe home is not a
-            place—it’s a feeling. Our mission is to connect buyers, sellers, and
-            agents through a next-gen platform, empowering them with the right
-            tools at every step of the process. Whether you're buying your dream
-            home or selling, we’ll help you make the most informed decision.
+
+          <p className="text-lg leading-relaxed mb-6 text-gray-700  text-justify">
+            <strong>Khalsa Property Dealers</strong> is one of Delhi’s most
+            trusted real estate firms, operational in{" "}
+            <strong>Rohini and Pitampura </strong>
+            since 1982. With 35+ years of experience and 8+ offices across Delhi
+            NCR, we have built a legacy of delivering dream homes on time.
+            <br />
+            <br />
+            We believe a home is more than four walls—it’s a lifestyle. Every
+            property is{" "}
+            <strong>developed and sold by our own dedicated team</strong>,
+            ensuring unmatched quality, transparency, and trust. Whether you’re
+            buying or selling, we empower you to make the best decision for your
+            future.
           </p>
+
           <a
             href="/about"
-            className="inline-block bg-[var(--primary-color)] text-white font-semibold py-2 px-6 rounded shadow-md"
+            className="inline-block bg-[var(--primary-color)] text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:scale-105 transition"
           >
-            Read More
+            Learn More
           </a>
         </div>
 
-        {/* Metrics Section */}
-        <div ref={metricsRef} className="grid grid-cols-2 gap-6 md:w-1/2">
+        {/* Right Metrics */}
+        <div ref={metricsRef} className="grid grid-cols-2 gap-6">
           {metrics.map((item, index) => (
             <div
               key={index}
-              className="bg-gray-50 text-[var(--primary-color)] border border-[var(--primary-color)] p-6 rounded shadow-md text-center"
+              className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md p-8 text-center transition"
             >
-              <h3 className="text-2xl font-bold mb-2">
+              <h3 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] mb-2">
                 <CountUp end={item.value} startCounting={startCount} />
                 {item.value > 1000 ? "+" : ""}
               </h3>
-              <p className="text-lg font-semibold">{item.label}</p>
+              <p className="text-base md:text-lg font-semibold text-gray-600 font-annie">
+                {item.label}
+              </p>
             </div>
           ))}
         </div>

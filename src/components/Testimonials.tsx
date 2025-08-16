@@ -81,20 +81,25 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
-      <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] mb-10 text-center">
-        WHAT PEOPLE SAY
-      </h2>
-      <div className="w-11/12 md:w-5/6 mx-auto">
+    <section className="py-12 mx-auto">
+      <div className=" w-11/12 md:w-5/6 mx-auto px-4">
+        <p className="uppercase tracking-widest text-gray-500 text-md">
+          Tesitmonial
+        </p>
+        <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+          WHAT PEOPLE SAY
+        </h2>
+      </div>
+      <div className=" w-11/12 md:w-5/6 mx-auto">
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
             <div key={index} className="px-4">
-              <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 flex flex-col justify-between min-h-[250px] h-full transition-transform hover:scale-105">
+              <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 flex flex-col justify-between min-h-[250px] h-full transition-transform ">
                 <div>
                   <span className="text-5xl font-serif text-[var(--primary-color)] leading-none">
                     “
                   </span>
-                  <p className="mt-3 text-gray-700 text-sm leading-relaxed">
+                  <p className="mt-3 text-gray-700 text-xl leading-relaxed font-annie ">
                     {testimonial.message}
                   </p>
                 </div>

@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
+        annie: ["Annie Use Your Telescope", "cursive"],
+        amatic: ['"Amatic SC"', "cursive"],
+        chewy: ['"Chewy"', "cursive"],
       },
       writingMode: {
         vertical: "vertical-rl",

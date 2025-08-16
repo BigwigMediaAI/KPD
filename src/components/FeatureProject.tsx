@@ -66,7 +66,7 @@ const FeaturedProjects: React.FC = () => {
             <p className="uppercase tracking-widest text-gray-500 text-md">
               Projects
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-[var(--primary-color)] border-b w-fit">
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
               FEATURED PROJECTS
             </h2>
           </div>
