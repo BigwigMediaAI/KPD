@@ -15,13 +15,16 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
     name: "",
     email: "",
     phone: "",
+    purpose: "",
     message: "",
   });
 
   const [otp, setOtp] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -112,6 +115,20 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
                 required
               />
             </div>
+
+            {/* ✅ Purpose Field */}
+            <select
+              name="purpose"
+              value={formData.purpose}
+              onChange={handleChange}
+              className="w-full p-2 border rounded"
+              required
+            >
+              <option value="">Select Purpose</option>
+              <option value="buy">Buy Property</option>
+              <option value="sell">Sell Property</option>
+            </select>
+
             <textarea
               name="message"
               value={formData.message}

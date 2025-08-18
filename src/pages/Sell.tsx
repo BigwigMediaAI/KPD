@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Phone,
   Mail,
@@ -6,25 +7,90 @@ import {
   DollarSign,
   CheckCircle,
 } from "lucide-react";
+import axios from "axios";
 import Footer from "../components/Footer";
 import Navbar from "../components/Nav";
 import banner from "../assets/7bc4232d-4d39-4869-97ff-543208aa7894.png";
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 function Sell() {
+  const [step, setStep] = useState<"form" | "otp">("form");
+  const [loading, setLoading] = useState(false);
+  // const [statusMessage, setStatusMessage] = useState("");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    purpose: "sell", // fixed for sell page
+    message: "",
+  });
+
+  const [otp, setOtp] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSendOtp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    // setStatusMessage("");
+
+    try {
+      await axios.post(`${BASE_URL}/api/lead/send-otp`, formData);
+      // setStatusMessage("OTP sent! Please check your email.");
+      setStep("otp");
+    } catch (err: any) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleVerifyOtp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    // setStatusMessage("");
+
+    try {
+      await axios.post(`${BASE_URL}/api/lead/verify-otp`, {
+        email: formData.email,
+        otp,
+      });
+      // setStatusMessage("Lead saved successfully!");
+      setStep("form"); // reset form after success
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        purpose: "sell",
+        message: "",
+      });
+      setOtp("");
+    } catch (err: any) {
+      console.log(err.response?.data?.message || "Invalid OTP.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div>
       <Navbar />
 
       {/* Hero Section */}
       <div className="relative pt-[80px] md:pt-[128px] h-[60vh] flex flex-col justify-center items-center text-center px-6">
-        {/* Background Image */}
         <img
-          src={banner} // replace with your local image path
+          src={banner}
           alt="Banner"
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         />
-
-        {/* Overlay content */}
         <div className="relative text-gray-800">
           <h1 className="text-3xl md:text-5xl font-bold">
             Sell Your Property With Us
@@ -111,7 +177,7 @@ function Sell() {
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* Contact Form with OTP */}
       <section className="py-16 bg-white w-11/12 md:w-5/6 mx-auto text-[var(--primary-color)] ">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Get In Touch With Us
@@ -129,39 +195,93 @@ function Sell() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="text-[#c9a368]" />
-              <span className="text-lg">sales@granthproperties.com</span>
+              <span className="text-lg">sales@example.com</span>
             </div>
           </div>
 
-          {/* Form */}
-          <form className="bg-[#f9f9f9] p-8 rounded-2xl shadow-md space-y-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a368] outline-none"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a368] outline-none"
-            />
-            <input
-              type="tel"
-              placeholder="Your Phone"
-              className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a368] outline-none"
-            />
-            <textarea
-              placeholder="Tell us about your property"
-              rows={4}
-              className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a368] outline-none"
-            ></textarea>
-            <button
-              type="submit"
-              className="w-full bg-[var(--primary-color)] text-white font-semibold py-3 rounded-lg hover:opacity-90 transition"
+          {/* OTP Form */}
+          {step === "form" ? (
+            <form
+              className="bg-[#f9f9f9] p-8 rounded-2xl shadow-md space-y-4"
+              onSubmit={handleSendOtp}
             >
-              Submit Property
-            </button>
-          </form>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a368] outline-none"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Your Email"
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a368] outline-none"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Your Phone"
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a368] outline-none"
+                required
+              />
+              <select
+                name="purpose"
+                value={formData.purpose}
+                onChange={handleChange}
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--primary-color)] outline-none text-black"
+                required
+              >
+                <option value="sell">Sell</option>
+                <option value="buy">Buy</option>
+              </select>
+
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Tell us about your property"
+                rows={4}
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--primary-color)] outline-none text-black"
+                required
+              ></textarea>
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[var(--primary-color)] text-white font-semibold py-3 rounded-lg hover:opacity-90 transition"
+              >
+                {loading ? "Sending OTP..." : "Submit & Get OTP"}
+              </button>
+            </form>
+          ) : (
+            <form
+              className="bg-[#f9f9f9] p-8 rounded-2xl shadow-md space-y-4"
+              onSubmit={handleVerifyOtp}
+            >
+              <input
+                type="text"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                placeholder="Enter OTP"
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--primary)] outline-none"
+                required
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[var(--primary-color)] text-white font-semibold py-3 rounded-lg hover:opacity-90 transition"
+              >
+                {loading ? "Verifying..." : "Verify OTP"}
+              </button>
+            </form>
+          )}
         </div>
       </section>
 

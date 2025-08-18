@@ -6,6 +6,7 @@ interface ContactRequest {
   name: string;
   phone: string;
   email: string;
+  purpose: string;
   createdAt: string;
 }
 
@@ -82,6 +83,9 @@ const AdminLead = () => {
                   <th className="px-4 py-3 border-b border-gray-700">Email</th>
                   <th className="px-4 py-3 border-b border-gray-700">Phone</th>
                   <th className="px-4 py-3 border-b border-gray-700">
+                    Purpose
+                  </th>
+                  <th className="px-4 py-3 border-b border-gray-700">
                     Requested At
                   </th>
                 </tr>
@@ -102,6 +106,7 @@ const AdminLead = () => {
                       </a>
                     </td>
                     <td className="px-4 py-3">{contact.phone}</td>
+                    <td className="px-4 py-3">{contact.purpose}</td>
                     <td className="px-4 py-3">
                       {new Date(contact.createdAt).toLocaleString()}
                     </td>
