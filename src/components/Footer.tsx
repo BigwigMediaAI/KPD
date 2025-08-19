@@ -74,11 +74,18 @@ const Footer: React.FC = () => {
           <div className="min-w-[150px]">
             <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
             <ul className="text-gray-300 space-y-1">
-              <li>› Home</li>
-              <li>› About Us</li>
-              <li>› Projects</li>
-              <li>› Blog</li>
-              <li>› Contact</li>
+              <li>
+                <a href="/about">› About Us</a>
+              </li>
+              <li>
+                <a href="/projects">› Projects</a>
+              </li>
+              <li>
+                <a href="/blogs">› Blog</a>
+              </li>
+              <li>
+                <a href="/contact">› Contact</a>
+              </li>
             </ul>
           </div>
 
@@ -104,20 +111,47 @@ const Footer: React.FC = () => {
             </p>
             <p className="flex items-center">
               <Mail className="w-5 h-5 mr-2" />
-              info@KHALSA PROPERTY DEALERSproperties.co
+              <a href="mailto:info@khalsaproperty.in">info@khalsaproperty.in</a>
             </p>
             <p className="flex items-center">
               <Phone className="w-5 h-5 mr-2" />
-              +91-9212717362
+              +91 8368607860
             </p>
           </div>
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4">
-            <Facebook className="w-6 h-6 text-white hover:text-[#4267B2]" />
-            <Instagram className="w-6 h-6 text-white hover:text-[#C13584]" />
-            <Youtube className="w-6 h-6 text-white hover:text-[#FF0000]" />
-            <Linkedin className="w-6 h-6 text-white hover:text-[#0077B5]" />
+            <a
+              href="https://www.facebook.com/khalsaproperties"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook className="w-6 h-6 text-white hover:text-[#4267B2]" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/kpd_developers?igsh=MXV5bzI4bjZwczR2bA=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className="w-6 h-6 text-white hover:text-[#C13584]" />
+            </a>
+
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Youtube className="w-6 h-6 text-white hover:text-[#FF0000]" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="w-6 h-6 text-white hover:text-[#0077B5]" />
+            </a>
           </div>
 
           {/* Subscription */}
@@ -134,7 +168,7 @@ const Footer: React.FC = () => {
               <button
                 onClick={handleSubscribe}
                 disabled={loading}
-                className="bg-[#c9a368] text-black font-semibold px-4 py-2 disabled:opacity-50"
+                className="bg-[var(--primary-color)] text-white font-semibold px-4 py-2 disabled:opacity-50"
               >
                 {loading ? "Subscribing..." : "Subscribe"}
               </button>

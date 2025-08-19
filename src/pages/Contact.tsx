@@ -1,6 +1,6 @@
 // import PhoneInput, { Value } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { Mail, MessageSquareText, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 import Footer from "../components/Footer";
@@ -14,40 +14,25 @@ export default function ContactPage() {
 
       <section className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-8  mt-20 md:mt-32">
         <div className="pt-4">
-          <h2 className="text-2xl mb-2 font-semibold">Dubai</h2>
+          <h2 className="text-2xl mb-2 font-semibold">Head Office</h2>
           <hr />
-          <h2 className="text-xl mb-2 font-semibold">Head Office</h2>
-          <p className="mb-1 text-lg">Dubai</p>
-          <p className="mb-4">
-            1703, Damac XL tower, Marasi Drive, Business bay, Dubai, UAE.
-          </p>
-          <h2 className="text-2xl mb-2 font-semibold">India</h2>
-          <hr />
-          <h2 className="text-xl mb-2 font-semibold">Branch Offices</h2>
-          <p className="mb-1 text-lg font-semibold">Delhi</p>
+
+          <p className="mb-1 text-lg font-semibold">Delhi, India</p>
           <p className="mb-4">
             Plot # 2, Sanjay Nagar, Gulabi Bagh, Delhi 110007, India
           </p>
-          <p className="mb-1 text-lg font-semibold">Delhi</p>
-          <p className="mb-4">
-            S-1, 3rd Floor, Janta Market, Rajouri Garden New Delhi - 110027
-          </p>
-          <h2 className="text-2xl mb-2 font-semibold">Australia</h2>
+          <h2 className="text-2xl mb-2 font-semibold">Branch Offices</h2>
           <hr />
-          <p className="mb-1 text-lg font-semibold">Melbourne</p>
-          <p className="mb-4">80 Lsabella way, Tarneit 3029 Melbourne</p>
 
-          <h2 className="text-2xl mb-2 font-semibold">New Zealand</h2>
-          <hr />
-          <p className="mb-1 text-lg font-semibold">Auckland</p>
+          <p className="mb-1 text-lg font-semibold">Goa, India</p>
           <p className="mb-4">
-            9/136 Marua Road, Mount Wellington, Auckland 1051
+            Office No FF-15, 5th Floor, Prabhu Chambers, Mapusa Bardez Goa
           </p>
 
           <p className="text-gray-400 mt-8">
             Our business operating hours are as follows:
           </p>
-          <p className="mt-2">Monday to Saturday: 10:30am - 7:30pm</p>
+          <p className="mt-2">Monday to Saturday: 11:00am - 7:30pm</p>
         </div>
 
         <div>
@@ -62,45 +47,36 @@ export default function ContactPage() {
             <div className="bg-white rounded-md p-4 flex items-center gap-4 shadow-sm hover:bg-gray-200 transition font-sans">
               <Phone className="w-6 h-6 text-gray-700" />
               <span className="text-sm text-gray-700">
-                +971 505029471 (Dubai)
+                +971 1234567890 (Dubai)
               </span>
             </div>
             <div className="bg-white rounded-md p-4 flex items-center gap-4 shadow-sm hover:bg-gray-200 transition font-sans">
               <Phone className="w-6 h-6 text-gray-700" />
               <span className="text-sm text-gray-700">
-                +91 83685 73451 (India)
+                +91 8368607860 (India)
               </span>
             </div>
 
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/+918368573451"
+              href="https://wa.me/+918368607860"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-md p-4 flex items-center gap-4 shadow-sm hover:bg-gray-200 transition font-sans"
             >
               <FaWhatsapp className="w-6 h-6 text-green-600" />
-              <span className="text-sm text-gray-700">+91 83685 73451</span>
+              <span className="text-sm text-gray-700">+91 8368607860</span>
             </a>
 
             {/* Email Button */}
             <a
-              href="mailto:vipul@bigwigmedia.in"
+              href="mailto:info@khalsaproperty.in"
               className="bg-white rounded-md p-4 flex items-center gap-4 shadow-sm hover:bg-gray-200 transition font-sans"
             >
               <Mail className="w-6 h-6 text-gray-700" />
               <span className="text-sm text-gray-700">
-                vipul@bigwigmedia.in
+                info@khalsaproperty.in
               </span>
-            </a>
-
-            {/* SMS Button */}
-            <a
-              href="sms:+918368573451"
-              className="bg-white rounded-md p-4 flex items-center gap-4 shadow-sm hover:bg-gray-200 transition font-sans"
-            >
-              <MessageSquareText className="w-6 h-6 text-gray-700" />
-              <span className="text-sm text-gray-700">+91 83685 73451</span>
             </a>
           </div>
         </div>

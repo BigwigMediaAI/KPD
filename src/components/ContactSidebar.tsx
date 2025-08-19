@@ -25,7 +25,7 @@ const ContactSidebar: React.FC = () => {
 
           {/* Contact Options */}
           <a
-            href="mailto:info@example.com"
+            href="mailto:info@khalsaproperty.in"
             className="w-12 h-24 bg-[var(--primary-color)] flex items-center justify-center text-white cursor-pointer"
           >
             <div className="flex flex-col items-center justify-center space-y-1">
@@ -37,7 +37,7 @@ const ContactSidebar: React.FC = () => {
           </a>
 
           <a
-            href="https://wa.me/+919212717362"
+            href="https://wa.me/+918368607860"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-14 bg-green-500 flex items-center justify-center text-white cursor-pointer"
@@ -46,7 +46,7 @@ const ContactSidebar: React.FC = () => {
           </a>
 
           <a
-            href="tel:+919212717362"
+            href="tel:+918368607860"
             className="w-12 h-14 bg-black flex items-center justify-center text-white cursor-pointer"
           >
             <FaPhoneAlt />
