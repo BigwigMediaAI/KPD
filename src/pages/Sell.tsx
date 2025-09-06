@@ -104,7 +104,7 @@ function Sell() {
 
       {/* Process Section */}
       <section className="py-16 bg-white w-11/12 md:w-5/6 text-[var(--primary-color)] mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
           Our Selling Process
         </h2>
         <div className="grid md:grid-cols-3 gap-10">
@@ -142,36 +142,39 @@ function Sell() {
       </section>
 
       {/* Why Choose Us */}
+
       <section className="py-16 bg-[#f9f9f9]  text-[var(--primary-color)] ">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Why Sell With Us?
-        </h2>
-        <div className="grid md:grid-cols-3 gap-10 w-11/12 md:w-5/6 mx-auto">
-          <div className="flex items-center gap-4 p-6 rounded-xl bg-white shadow">
-            <CheckCircle className="text-[#c9a368]" size={32} />
-            <div>
-              <h3 className="text-lg font-semibold">Trusted Network</h3>
-              <p className="text-gray-600">
-                Access to genuine buyers & investors.
-              </p>
+        <div className=" w-11/12 md:w-5/6 mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+            Why Sell With Us?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-10 ">
+            <div className="flex items-center gap-4 p-6 rounded-xl bg-white shadow">
+              <CheckCircle className="text-[#c9a368]" size={32} />
+              <div>
+                <h3 className="text-lg font-semibold">Trusted Network</h3>
+                <p className="text-gray-600">
+                  Access to genuine buyers & investors.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-4 p-6 rounded-xl bg-white shadow">
-            <CheckCircle className="text-[#c9a368]" size={32} />
-            <div>
-              <h3 className="text-lg font-semibold">Best Market Price</h3>
-              <p className="text-gray-600">
-                Get accurate valuation and maximum returns.
-              </p>
+            <div className="flex items-center gap-4 p-6 rounded-xl bg-white shadow">
+              <CheckCircle className="text-[#c9a368]" size={32} />
+              <div>
+                <h3 className="text-lg font-semibold">Best Market Price</h3>
+                <p className="text-gray-600">
+                  Get accurate valuation and maximum returns.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-4 p-6 rounded-xl bg-white shadow">
-            <CheckCircle className="text-[#c9a368]" size={32} />
-            <div>
-              <h3 className="text-lg font-semibold">Hassle-Free Process</h3>
-              <p className="text-gray-600">
-                We handle the legal and documentation work.
-              </p>
+            <div className="flex items-center gap-4 p-6 rounded-xl bg-white shadow">
+              <CheckCircle className="text-[#c9a368]" size={32} />
+              <div>
+                <h3 className="text-lg font-semibold">Hassle-Free Process</h3>
+                <p className="text-gray-600">
+                  We handle the legal and documentation work.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -179,9 +182,11 @@ function Sell() {
 
       {/* Contact Form with OTP */}
       <section className="py-16 bg-white w-11/12 md:w-5/6 mx-auto text-[var(--primary-color)] ">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Get In Touch With Us
-        </h2>
+        <div className="flex justify-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic  border-[var(--primary-color)] pl-3 ">
+            Get In Touch With Us
+          </h2>
+        </div>
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Contact Info */}
           <div className="space-y-6">
