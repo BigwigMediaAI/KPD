@@ -15,7 +15,9 @@ const About: React.FC = () => {
         <section className=" w-11/12 md:w-5/6 mx-auto flex flex-col md:flex-row items-center gap-8 py-12">
           {/* Left Text */}
           <div className="md:w-1/2 space-y-4">
-            <h2 className="text-3xl font-bold mb-4">About Us</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+              About Us
+            </h2>
             <p>
               With our area ability and accomplished professionals, we are able
               to accommodate our clients Construction and Architectural
@@ -67,7 +69,9 @@ const About: React.FC = () => {
 
         {/* Our Founders */}
         <section className="py-12 w-11/12 md:w-5/6 mx-auto">
-          <h3 className="text-2xl font-bold mb-8 text-center">Our Founders</h3>
+          <h3 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+            Our Founders
+          </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
               "https://img.freepik.com/free-photo/man-portrait-posing-loft-modern-space_158595-5365.jpg?semt=ais_hybrid&w=740",

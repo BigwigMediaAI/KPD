@@ -7,42 +7,42 @@ const testimonials = [
   {
     name: "PULKIT",
     message:
-      "I recently relocated to a new city and enlisted the services Saraswati Properties to help me find a new home.",
+      "I recently worked with KPD to buy my new home, and their team made the entire process smooth and hassle-free.",
   },
   {
     name: "KIRTI BEDI",
     message:
-      "I had the pleasure of working with Saraswati Properties for the sale of my property, and I couldn’t be happier with the results.",
+      "KPD helped me sell my property quickly and at the best price. Their expertise is unmatched.",
   },
   {
     name: "SAURAV SHARMA",
     message:
-      "I am extremely grateful to Saraswati Properties for their exceptional service and expertise in helping me find my dream home.",
+      "I am extremely satisfied with KPD’s services. They guided me professionally through every step of buying my dream home.",
   },
   {
     name: "ANITA DESAI",
     message:
-      "Saraswati Properties made buying my first home a smooth and stress-free experience.",
+      "Buying my first property with KPD was a stress-free experience. Highly recommended!",
   },
   {
     name: "RAHUL VERMA",
     message:
-      "Professional and courteous team. Highly recommended for real estate needs.",
+      "The team at KPD is professional and trustworthy. They made selling my property easy and efficient.",
   },
   {
     name: "PRIYA KAPOOR",
     message:
-      "Their attention to detail and commitment to clients is outstanding.",
+      "KPD’s attention to detail and commitment to clients is outstanding. I couldn’t ask for a better experience.",
   },
   {
     name: "RAJ SINGH",
     message:
-      "My selling experience was fast and efficient thanks to Saraswati Properties.",
+      "Thanks to KPD, my property sale was fast and smooth. Truly reliable real estate experts.",
   },
   {
     name: "NEHA GUPTA",
     message:
-      "They helped me find the perfect rental home within my budget. Thank you!",
+      "KPD helped me find the perfect home within my budget. Excellent service and guidance throughout!",
   },
 ];
 

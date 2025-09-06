@@ -59,12 +59,11 @@ const Footer: React.FC = () => {
             draggable="false"
           />
           <p className="text-sm leading-relaxed text-gray-300">
-            KHALSA PROPERTY DEALERS Properties is an accomplished best property
-            dealer in Delhi operational in Rohini and Pitampura, New Delhi since
-            1982. KHALSA PROPERTY DEALERS Properties has an experience of 35+
-            years in Real Estate. KHALSA PROPERTY DEALERS Properties has 8+
-            offices situated in Delhi and NCR and delivered millions of projects
-            on time.
+            Khalsa Property Dealers, operating in Rohini & Pitampura since 2007,
+            is a trusted real estate firm with 18+ years of experience and 3+
+            offices across Delhi NCR. With 65+ projects and 2,000+ clients, we
+            now also serve Goa and Dubai, delivering dream homes and high-value
+            investment opportunities on time.
           </p>
         </div>
 

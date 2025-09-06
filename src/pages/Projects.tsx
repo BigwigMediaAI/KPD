@@ -35,7 +35,9 @@ function Projects() {
 
       {/* Page Header */}
       <section className=" py-12 mt-28 text-center text-black">
-        <h1 className="text-3xl font-bold">Our Projects</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+          Our Projects
+        </h1>
         <p className="mt-2 text-lg">Explore our exclusive developments</p>
       </section>
 

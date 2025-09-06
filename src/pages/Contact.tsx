@@ -14,14 +14,18 @@ export default function ContactPage() {
 
       <section className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-8  mt-20 md:mt-32">
         <div className="pt-4">
-          <h2 className="text-2xl mb-2 font-semibold">Head Office</h2>
+          <h2 className="text-2xl md:text-3xl mb-2 font-bold text-[var(--primary-color)] font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+            Head Office
+          </h2>
           <hr />
 
           <p className="mb-1 text-lg font-semibold">Delhi, India</p>
           <p className="mb-4">
             Plot # 2, Sanjay Nagar, Gulabi Bagh, Delhi 110007, India
           </p>
-          <h2 className="text-2xl mb-2 font-semibold">Branch Offices</h2>
+          <h2 className=" mt-6 text-2xl md:text-3xl mb-2 font-bold text-[var(--primary-color)] font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+            Branch Offices
+          </h2>
           <hr />
 
           <p className="mb-1 text-lg font-semibold">Goa, India</p>
@@ -35,8 +39,11 @@ export default function ContactPage() {
           <p className="mt-2">Monday to Saturday: 11:00am - 7:30pm</p>
         </div>
 
-        <div>
-          <h2 className="text-xl font-semibold mb-2 font-sans">Get in Touch</h2>
+        <div className="pt-4">
+          <h2 className="text-2xl md:text-3xl mb-2 font-bold text-[var(--primary-color)] font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+            Get in Touch
+          </h2>
+          <hr />
           <p className="mb-4 text-gray-400 font-sans">
             Please contact us via phone or email below or visit us at our Head
             Office in Business Bay during operating hours.
