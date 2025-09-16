@@ -2,7 +2,14 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/logo.png";
-import { Gauge, NotebookPen, UserPlus, Users } from "lucide-react";
+import {
+  Building,
+  Gauge,
+  Handshake,
+  NotebookPen,
+  UserPlus,
+  Users,
+} from "lucide-react";
 
 const AdminLayout = () => {
   const location = useLocation();
@@ -15,6 +22,8 @@ const AdminLayout = () => {
     { icon: <UserPlus />, label: "Subscribers", to: "/admin/subscribers" },
     { icon: <Users />, label: "Leads", to: "/admin/leads" },
     { icon: <NotebookPen />, label: "Blogs", to: "/admin/blogs" },
+    { icon: <Building />, label: "Properties", to: "/admin/properties" },
+    { icon: <Handshake />, label: "Sell Requests", to: "/admin/sell-requests" },
   ];
 
   return (

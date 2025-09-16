@@ -37,7 +37,7 @@ const AdminBlog = () => {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${baseURL}/viewblog`);
+      const res = await fetch(`${baseURL}/blog/viewblog`);
       const data = await res.json();
       setBlogs(data);
       console.log(data);
@@ -56,7 +56,7 @@ const AdminBlog = () => {
       return;
 
     try {
-      const res = await fetch(`${baseURL}/${slug}`, {
+      const res = await fetch(`${baseURL}/blog/${slug}`, {
         method: "DELETE",
       });
       const json = await res.json();
@@ -80,7 +80,7 @@ const AdminBlog = () => {
     formData.append("coverImage", selectedImage);
 
     try {
-      const res = await fetch(`${baseURL}/${editingSlug}/image`, {
+      const res = await fetch(`${baseURL}/blog/${editingSlug}/image`, {
         method: "PATCH",
         body: formData,
         // ❗ Don't set Content-Type manually for FormData, fetch handles it

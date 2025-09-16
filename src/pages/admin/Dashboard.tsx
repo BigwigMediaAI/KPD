@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
-import { FaBook, FaUserPlus, FaUser } from "react-icons/fa";
+import { FaBook, FaUserPlus, FaUser, FaBuilding } from "react-icons/fa";
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 const GRADIENTS = [
   "from-indigo-500 via-purple-500 to-pink-500",
   "from-sky-500 via-blue-500 to-indigo-600",
+  "from-emerald-400 via-teal-500 to-cyan-600",
+  "from-yellow-400 via-orange-500 to-red-500",
+  "from-pink-400 via-rose-500 to-red-600",
+  "from-lime-400 via-green-500 to-emerald-600",
+  "from-violet-400 via-fuchsia-500 to-pink-600",
+  "from-rose-400 via-fuchsia-500 to-indigo-600",
 ];
 
 const Dashboard = () => {
@@ -13,19 +19,22 @@ const Dashboard = () => {
     leads: 0,
     subscribers: 0,
     blogs: 0,
+    properties: 0,
   });
 
   useEffect(() => {
     Promise.all([
       fetch(`${baseURL}/api/lead/all`).then((r) => r.json()),
       fetch(`${baseURL}/subscribers`).then((r) => r.json()),
-      fetch(`${baseURL}/viewblog`).then((r) => r.json()),
+      fetch(`${baseURL}/blog/viewblog`).then((r) => r.json()),
+      fetch(`${baseURL}/property`).then((r) => r.json()),
     ])
-      .then(([leads, subscribers, blogs]) => {
+      .then(([leads, subscribers, blogs, properties]) => {
         setCounts({
           leads: Array.isArray(leads) ? leads.length : 0,
           subscribers: Array.isArray(subscribers) ? subscribers.length : 0,
           blogs: Array.isArray(blogs) ? blogs.length : 0,
+          properties: Array.isArray(properties) ? properties.length : 0,
         });
       })
       .catch((error) => {
@@ -37,6 +46,7 @@ const Dashboard = () => {
     { title: "Leads", icon: <FaUser />, count: counts.leads },
     { title: "Subscriber", icon: <FaUserPlus />, count: counts.subscribers },
     { title: "Blogs", icon: <FaBook />, count: counts.blogs },
+    { title: "Properties", icon: <FaBuilding />, count: counts.properties },
   ];
 
   return (

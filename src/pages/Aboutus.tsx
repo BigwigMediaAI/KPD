@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import aboutImg from "../assets/logo-inner.png"; // Replace with actual image
+// import aboutImg from "../assets/logo-inner.png"; // Replace with actual image
 import Navbar from "../components/Nav";
 import Footer from "../components/Footer";
 import ContactSidebar from "../components/ContactSidebar";
@@ -42,7 +42,7 @@ const About: React.FC = () => {
           {/* Right Image */}
           <div className="md:w-1/2">
             <img
-              src={aboutImg}
+              src="https://khalsaproperty.in/image/home-bg.jpg"
               alt="About Us"
               className="rounded-xl shadow-lg w-full object-cover"
             />

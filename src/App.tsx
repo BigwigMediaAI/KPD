@@ -16,6 +16,10 @@ import AdminBlog from "./pages/admin/AdminBlog";
 import Buy from "./pages/Buy";
 import Sell from "./pages/Sell";
 import OffPlan from "./pages/OffPlan";
+import SellRequests from "./pages/admin/SellRequests";
+import AllProperties from "./pages/admin/AllProperties";
+import BuyDetails from "./pages/BuyDetails";
+import OffplanDetails from "./pages/OffplanDetails";
 
 function App() {
   return (
@@ -26,8 +30,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Products />} />
         <Route path="/buy-properties" element={<Buy />} />
+        <Route path="/buy-properties/:slug" element={<BuyDetails />} />
         <Route path="/sell-properties" element={<Sell />} />
         <Route path="/offplan-properties" element={<OffPlan />} />
+        <Route path="/offplan-properties/:slug" element={<OffplanDetails />} />
 
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:slug" element={<BlogDetails />} />
@@ -37,6 +43,8 @@ function App() {
           <Route path="leads" element={<AdminLead />} />
           <Route path="subscribers" element={<AdminSubscriber />} />
           <Route path="blogs" element={<AdminBlog />} />
+          <Route path="sell-requests" element={<SellRequests />} />
+          <Route path="properties" element={<AllProperties />} />
         </Route>
       </Routes>
 

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Nav";
 import Footer from "../components/Footer";
+import PopupForm from "../components/PopUpForm";
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
@@ -25,6 +26,8 @@ const BlogDetails = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [relatedBlogs, setRelatedBlogs] = useState<BlogType[]>([]);
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -143,6 +146,23 @@ const BlogDetails = () => {
           </div>
         </div>
       )}
+
+      <div className="bg-[var(--primary-color)] text-white text-center py-10 px-4 mt-12">
+        <h2 className="text-3xl font-bold mb-4">
+          Ready to Start Your Dream Project?
+        </h2>
+        <p className="max-w-2xl mx-auto mb-6 text-lg">
+          Let’s bring your vision to life with our expert team. Get in touch
+          today and take the first step toward your future.
+        </p>
+        <button
+          onClick={() => setIsPopupOpen(true)}
+          className="bg-white text-[var(--primary-color)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+        >
+          Get Started
+        </button>
+      </div>
+      {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}
 
       <Footer />
     </div>

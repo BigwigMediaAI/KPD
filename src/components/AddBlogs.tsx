@@ -114,7 +114,9 @@ const AddBlog = ({
       });
 
       const res = await fetch(
-        existingBlog ? `${baseURL}/${existingBlog.slug}` : `${baseURL}/add`,
+        existingBlog
+          ? `${baseURL}/blog/${existingBlog.slug}`
+          : `${baseURL}/blog/add`,
         {
           method: existingBlog ? "PUT" : "POST",
           body: blogData,

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 
 import Fuse from "fuse.js";
+import PopupForm from "../components/PopUpForm";
 
 interface BlogPost {
   _id: string;
@@ -23,6 +24,8 @@ function Blogs() {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const blogsPerPage = 9;
 
@@ -149,6 +152,23 @@ function Blogs() {
           )}
         </div>
       </div>
+
+      <div className="bg-[var(--primary-color)] text-white text-center py-10 px-4 mt-12">
+        <h2 className="text-3xl font-bold mb-4">
+          Ready to Start Your Dream Project?
+        </h2>
+        <p className="max-w-2xl mx-auto mb-6 text-lg">
+          Let’s bring your vision to life with our expert team. Get in touch
+          today and take the first step toward your future.
+        </p>
+        <button
+          onClick={() => setIsPopupOpen(true)}
+          className="bg-white text-[var(--primary-color)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+        >
+          Get Started
+        </button>
+      </div>
+      {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}
       <Footer />
     </div>
   );
