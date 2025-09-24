@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
         <div className="text-sm py-1 flex justify-end items-center space-x-4 w-11/12 md:w-5/6 mx-auto">
           <div className="flex items-center space-x-1">
             <span className="text-xs">📞</span>
-            <span>+91 8368607860</span>
+            <span>+91 9212717362</span>
           </div>
           <div className="flex items-center space-x-1">
             <span className="text-xs">✉️</span>

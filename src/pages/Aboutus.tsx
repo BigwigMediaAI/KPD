@@ -15,7 +15,7 @@ const About: React.FC = () => {
         <section className=" w-11/12 md:w-5/6 mx-auto flex flex-col md:flex-row items-center gap-8 py-12">
           {/* Left Text */}
           <div className="md:w-1/2 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3 text-justifys">
               About Us
             </h2>
             <p>

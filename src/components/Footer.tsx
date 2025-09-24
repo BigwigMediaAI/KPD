@@ -58,12 +58,12 @@ const Footer: React.FC = () => {
             className="h-24 mb-4"
             draggable="false"
           />
-          <p className="text-sm leading-relaxed text-gray-300">
-            Khalsa Property Dealers, operating in Rohini & Pitampura since 2007,
-            is a trusted real estate firm with 18+ years of experience and 3+
-            offices across Delhi NCR. With 65+ projects and 2,000+ clients, we
-            now also serve Goa and Dubai, delivering dream homes and high-value
-            investment opportunities on time.
+          <p className="text-sm leading-relaxed text-gray-300 text-justify">
+            Khalsa Property Dealers, operating in Gulabi Bagh, Sanjay Nagar
+            since 2007, is a trusted real estate firm with 18+ years of
+            experience and 3+ offices across Delhi NCR. With 65+ projects and
+            2,000+ clients, we now also serve Goa and Dubai, delivering dream
+            homes and high-value investment opportunities on time.
           </p>
         </div>
 
@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
             </p>
             <p className="flex items-center">
               <Phone className="w-5 h-5 mr-2" />
-              +91 8368607860
+              +91 9212717362
             </p>
           </div>
 
