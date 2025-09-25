@@ -86,8 +86,8 @@ const About: React.FC = () => {
           </h2>
 
           <p className="text-lg leading-relaxed mb-6 text-gray-700  text-justify">
-            <strong>Khalsa Property Dealers</strong> is one of Delhi’s most
-            trusted real estate firms, operational in{" "}
+            <strong>Khalsa Property Dealers</strong> is among the most trusted
+            real estate firms in North Delhi. Operational in{" "}
             <strong> Gulabi Bagh, Sanjay Nagar </strong>
             since 2007. With 18+ years of experience and 3+ offices across Delhi
             NCR, we have built a legacy of delivering dream homes on time.
@@ -96,9 +96,9 @@ const About: React.FC = () => {
             We believe a home is more than just four walls. With over 65
             successful projects across India and a portfolio of 2,000+ valued
             clients, our footprint now extends to{" "}
-            <strong> Goa and Dubai. </strong> We specialize in creating
-            high-value investment opportunities designed to maximize returns in
-            minimal time.
+            <strong> Goa, Gurugram and Dubai. </strong> We specialize in
+            creating high-value investment opportunities designed to maximize
+            returns in minimal time.
           </p>
 
           <a

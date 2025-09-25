@@ -49,50 +49,35 @@ const About: React.FC = () => {
           </div>
         </section>
 
-        {/* Mission Section */}
-        {/* <section className="bg-[#f5f5f5] rounded-xl py-6 md:py-10 my-12">
-          <div className="w-11/12 md:w-5/6 mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>
-                Develop premium quality real estate providing high class
-                construction services.
-              </li>
-              <li>
-                To offer consistent and reliable construction and real estate
-                services.
-              </li>
-              <li>Be recognized as a leader in our own field.</li>
-            </ul>
-          </div>
-        </section> */}
-
-        {/* Our Founders */}
+        {/* Our Founder */}
         <section className="py-12 w-11/12 md:w-5/6 mx-auto">
           <h3 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
-            Our Founders
+            Our Founder
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {[
-              "https://img.freepik.com/free-photo/man-portrait-posing-loft-modern-space_158595-5365.jpg?semt=ais_hybrid&w=740",
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWrjS8FQcaIi2_sS18KNaKc2xcINMnDm8yWIuZnG9A07MKddJZu_LLtvkuKbZyfCcx86A&usqp=CAU",
-              "https://media.istockphoto.com/id/1450788989/photo/portrait-of-happy-african-businesswoman-holding-digital-tablet-in-the-office.jpg?s=612x612&w=0&k=20&c=aalIPdiN9iTx45CkGrGMlGn-LVyICKzNvgoARsyAArg=",
-            ].map((img, idx) => (
-              <div
-                key={idx}
-                className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white"
-              >
-                <img
-                  src={img}
-                  alt={`Founder ${idx + 1}`}
-                  className="w-full h-72 object-cover"
-                />
-                <div className="p-4 text-center">
-                  <h4 className="font-semibold text-lg">Founder {idx + 1}</h4>
-                  <p className="text-sm text-gray-600">Co-Founder & Director</p>
-                </div>
-              </div>
-            ))}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            {/* Founder Card */}
+            <div className="rounded-xl col-span-1 overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white">
+              <img
+                src="https://img.freepik.com/free-photo/man-portrait-posing-loft-modern-space_158595-5365.jpg?semt=ais_hybrid&w=740"
+                alt="Founder"
+                className="w-full h-80 object-cover"
+              />
+            </div>
+
+            {/* Founder Statement */}
+            <div className="flex flex-col col-span-2 justify-center text-gray-800">
+              <p className="text-xl  leading-relaxed italic font-light text-gray-800">
+                “At <strong>Khalsa Property Dealers</strong>, our mission has
+                always been to deliver homes that bring happiness, security, and
+                trust to every family. Since 2007, we’ve dedicated ourselves to
+                making real estate simple, transparent, and reliable for all our
+                clients.”
+              </p>
+              <span className="mt-6 block font-semibold text-[var(--primary-color)] text-lg md:text-xl">
+                — Mr. Amandeep Singh, Founder
+              </span>
+            </div>
           </div>
         </section>
       </div>
