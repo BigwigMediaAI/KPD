@@ -31,13 +31,14 @@ async function getBlog(slug: string): Promise<BlogType> {
   return found;
 }
 
-// ✅ Optional: generate dynamic metadata
+// ✅ Proper type for dynamic route metadata
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const blog = await getBlog(params.slug);
+  const { slug } = await params;
+  const blog = await getBlog(slug);
 
   return {
     title: blog.title,
@@ -48,19 +49,20 @@ export async function generateMetadata({
   };
 }
 
-// ✅ Server Component Blog Page
+// ✅ Proper page function type
 export default async function BlogDetails({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const blog = await getBlog(params.slug);
+  const { slug } = await params;
+  const blog = await getBlog(slug);
 
-  // Optional: fetch related blogs
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/blog/viewblog`, {
     cache: "no-store",
   });
   const allBlogs: BlogType[] = await res.json();
+
   const relatedBlogs = allBlogs
     .filter(
       (b) =>
@@ -71,7 +73,7 @@ export default async function BlogDetails({
 
   return (
     <div className="bg-white text-black min-h-screen">
-      {/* SEO Schema */}
+      {/* Schema Markup */}
       {Array.isArray(blog.schemaMarkup) &&
         blog.schemaMarkup.map((markup, idx) => (
           <script
