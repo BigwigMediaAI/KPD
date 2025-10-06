@@ -51,7 +51,7 @@ const FeaturedProjects: React.FC = () => {
           {projects.map((project, idx) => (
             <SwiperSlide key={idx}>
               <div className="px-2">
-                <div className="h-48 md:h-[250px] overflow-hidden rounded-md group">
+                <div className="h-80 md:h-[400px] overflow-hidden rounded-md group">
                   <img
                     src={project.img.src}
                     alt={project.title}
