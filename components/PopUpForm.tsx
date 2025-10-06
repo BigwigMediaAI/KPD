@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import axios from "axios";
+import type { AxiosError } from "axios";
 
 interface PopupFormProps {
   onClose: () => void;
@@ -41,9 +42,12 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
       );
       setStatusMessage("OTP sent! Please check your email.");
       setStep("otp");
-    } catch (err: any) {
-      if (err.response?.status === 400) {
-        setStatusMessage(err.response.data.message || "Email already used.");
+    } catch (err: unknown) {
+      const axiosError = err as AxiosError<{ message?: string }>;
+      if (axiosError.response?.status === 400) {
+        setStatusMessage(
+          axiosError.response.data?.message || "Email already used."
+        );
       } else {
         setStatusMessage("Something went wrong. Try again later.");
       }
@@ -67,8 +71,9 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
       );
       setStatusMessage("Lead saved successfully!");
       setTimeout(onClose, 2000);
-    } catch (err: any) {
-      setStatusMessage(err.response?.data?.message || "Invalid OTP.");
+    } catch (err: unknown) {
+      const axiosError = err as AxiosError<{ message?: string }>;
+      setStatusMessage(axiosError.response?.data?.message || "Invalid OTP.");
     } finally {
       setLoading(false);
     }
@@ -85,7 +90,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
         </button>
 
         <h2 className="text-xl font-bold text-center mb-1 text-white">
-          Let's Grow Together!
+          Let&apos;s Grow Together!
         </h2>
         <p className="text-center mb-4 text-white">
           Have a question or request? Ask us anything!

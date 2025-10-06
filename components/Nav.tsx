@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 import { usePathname } from "next/navigation"; // ✅ Fix SSR-safe pathname
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,7 +38,9 @@ const Navbar: React.FC = () => {
           </div>
           <div className="flex items-center space-x-1">
             <span className="text-xs">✉️</span>
-            <a href="mailto:info@khalsaproperty.in">info@khalsaproperty.in</a>
+            <Link href="mailto:info@khalsaproperty.in">
+              info@khalsaproperty.in
+            </Link>
           </div>
         </div>
       </div>
@@ -46,7 +49,7 @@ const Navbar: React.FC = () => {
       <div className="flex items-center justify-between w-11/12 md:w-5/6 mx-auto">
         {/* ✅ Logo aligned left */}
         <div className="flex items-center">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image
               src={logo}
               alt="Khalsa Property Dealers"
@@ -55,7 +58,7 @@ const Navbar: React.FC = () => {
               className="object-contain h-16 w-auto"
               draggable="false"
             />
-          </a>
+          </Link>
         </div>
 
         {/* ✅ Desktop Nav aligned right */}
@@ -70,7 +73,7 @@ const Navbar: React.FC = () => {
                 {/* Dropdown Menu */}
                 <div className="absolute left-0 mt-2  bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   {link.dropdown.map((sublink) => (
-                    <a
+                    <Link
                       key={sublink.href}
                       href={sublink.href}
                       className={`block px-4 py-2 whitespace-nowrap  ${
@@ -80,12 +83,12 @@ const Navbar: React.FC = () => {
                       }`}
                     >
                       {sublink.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
             ) : (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className={`transition-colors  ${
@@ -95,7 +98,7 @@ const Navbar: React.FC = () => {
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             )
           )}
         </nav>
@@ -137,7 +140,7 @@ const Navbar: React.FC = () => {
                 {propertyOpen && (
                   <div className="ml-4 mt-2 space-y-2">
                     {link.dropdown.map((sublink) => (
-                      <a
+                      <Link
                         key={sublink.href}
                         href={sublink.href}
                         onClick={() => setMenuOpen(false)} // ✅ close on click
@@ -148,13 +151,13 @@ const Navbar: React.FC = () => {
                         }`}
                       >
                         {sublink.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
               </div>
             ) : (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
@@ -165,7 +168,7 @@ const Navbar: React.FC = () => {
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             )
           )}
         </div>

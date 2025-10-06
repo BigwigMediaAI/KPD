@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import logo from "../assets/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -72,16 +73,16 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
             <ul className="text-gray-300 space-y-1">
               <li>
-                <a href="/about">› About Us</a>
+                <Link href="/about">› About Us</Link>
               </li>
               <li>
-                <a href="/projects">› Projects</a>
+                <Link href="/projects">› Projects</Link>
               </li>
               <li>
-                <a href="/blogs">› Blog</a>
+                <Link href="/blogs">› Blog</Link>
               </li>
               <li>
-                <a href="/contact">› Contact</a>
+                <Link href="/contact">› Contact</Link>
               </li>
             </ul>
           </div>
@@ -117,34 +118,34 @@ const Footer: React.FC = () => {
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4">
-            <a
+            <Link
               href="https://www.facebook.com/khalsaproperties"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Facebook className="w-6 h-6 text-white hover:text-[#4267B2]" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.instagram.com/kpd_developers?igsh=MXV5bzI4bjZwczR2bA=="
               target="_blank"
               rel="noopener noreferrer"
             >
               <Instagram className="w-6 h-6 text-white hover:text-[#C13584]" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.youtube.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Youtube className="w-6 h-6 text-white hover:text-[#FF0000]" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Linkedin className="w-6 h-6 text-white hover:text-[#0077B5]" />
-            </a>
+            </Link>
           </div>
 
           {/* Subscription */}
