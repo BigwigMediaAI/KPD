@@ -20,8 +20,13 @@ interface BlogType {
   schemaMarkup?: string[];
 }
 
-// ✅ Fix typing here
-const BlogDetails = ({ params }: { params: { slug: string } }) => {
+interface BlogDetailsProps {
+  params: {
+    slug: string;
+  };
+}
+
+const BlogDetails = ({ params }: BlogDetailsProps) => {
   const { slug } = params;
   const router = useRouter();
 
@@ -126,16 +131,14 @@ const BlogDetails = ({ params }: { params: { slug: string } }) => {
 
       {/* Blog Content Section */}
       <div className="w-11/12 md:w-5/6 mx-auto">
-        {/* Blog Main Content */}
-
         <div
-          className=" blog-content"
+          className="blog-content"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
 
         {/* Related Blogs */}
         {relatedBlogs.length > 0 && (
-          <aside className="lg:col-span-1 bg-gray-50 p-5 rounded-2xl shadow-sm h-fit">
+          <aside className="lg:col-span-1 bg-gray-50 p-5 rounded-2xl shadow-sm h-fit mt-10">
             <h2 className="text-2xl font-semibold mb-4 text-gray-900 border-b border-gray-200 pb-2">
               Related Blogs
             </h2>
