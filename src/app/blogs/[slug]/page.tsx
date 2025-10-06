@@ -20,11 +20,8 @@ interface BlogType {
   schemaMarkup?: string[];
 }
 
-interface BlogDetailsProps {
-  params: { slug: string };
-}
-
-const BlogDetails: React.FC<BlogDetailsProps> = ({ params }) => {
+// ✅ Fix typing here
+const BlogDetails = ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
   const router = useRouter();
 
