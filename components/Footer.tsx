@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#0f0f0f] text-white px-6 pt-10 pb-16 md:px-16 lg:px-24">
+    <footer className="bg-[#0f0f0f] text-white px-6 py-10 md:px-16 lg:px-24">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
         {/* Left Column */}
         <div className="flex-1">
@@ -132,20 +132,6 @@ const Footer: React.FC = () => {
             >
               <Instagram className="w-6 h-6 text-white hover:text-[#C13584]" />
             </Link>
-            <Link
-              href="https://www.youtube.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Youtube className="w-6 h-6 text-white hover:text-[#FF0000]" />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin className="w-6 h-6 text-white hover:text-[#0077B5]" />
-            </Link>
           </div>
 
           {/* Subscription */}
@@ -169,6 +155,48 @@ const Footer: React.FC = () => {
             </div>
             {message && <p className="mt-2 text-sm">{message}</p>}
           </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-700 mt-10 pt-4 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-sm">
+        {/* Left: Copyright */}
+        <p className="text-center sm:text-left">
+          © {new Date().getFullYear()}{" "}
+          <span className="text-white font-medium">
+            Khalsa Property Dealers
+          </span>
+          . All rights reserved.
+        </p>
+
+        {/* Center: Terms and Privacy */}
+        <div className="flex items-center gap-4 mt-2 sm:mt-0">
+          <Link
+            href="/terms"
+            className="hover:text-[var(--primary-color)] transition-colors"
+          >
+            Terms & Conditions
+          </Link>
+          <span>|</span>
+          <Link
+            href="/privacy"
+            className="hover:text-[var(--primary-color)] transition-colors"
+          >
+            Privacy Policy
+          </Link>
+        </div>
+
+        {/* Right: Bigwig Media */}
+        <div className="mt-2 sm:mt-0 text-center sm:text-right">
+          Made & Marketed by{" "}
+          <Link
+            href="https://www.bigwigmediadigital.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--primary-color)] hover:underline transition-colors"
+          >
+            Bigwig Media Digital
+          </Link>
         </div>
       </div>
     </footer>
