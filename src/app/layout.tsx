@@ -29,6 +29,20 @@ export default function RootLayout({
           name="google-site-verification"
           content="01qxqZ3EUKX959czFvlJ3xKEGPFDCcGL1y1ZFj8dWKM"
         />
+        {/* <!-- Google tag (gtag.js) --> */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-N9CHCS7D6P"
+        ></script>
+        <script>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-N9CHCS7D6P');
+          `}
+        </script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
