@@ -6,6 +6,7 @@ import Footer from "../../../components/Footer";
 import ContactSidebar from "../../../components/ContactSidebar";
 import PopupForm from "../../../components/PopUpForm";
 import Image from "next/image";
+import owner from "../../../assets/owner.png";
 
 const About: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -62,10 +63,10 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             {/* Founder Card */}
             <div className="rounded-xl col-span-1 overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white">
-              <img
-                src="https://img.freepik.com/free-photo/man-portrait-posing-loft-modern-space_158595-5365.jpg?semt=ais_hybrid&w=740"
+              <Image
+                src={owner}
                 alt="Founder"
-                className="w-full h-80 object-cover"
+                className="w-full h-[530px] object-cover"
               />
             </div>
 
