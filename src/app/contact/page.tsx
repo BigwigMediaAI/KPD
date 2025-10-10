@@ -36,7 +36,8 @@ export default function ContactPage() {
           <p className="text-gray-400 mt-8">
             Our business operating hours are as follows:
           </p>
-          <p className="mt-2">Monday to Saturday: 11:00am - 7:30pm</p>
+          <p className="mt-2">Monday: Closed</p>
+          <p className="mt-1">Tuesday to Sunday: 10:30am - 7:00pm</p>
         </div>
 
         <div className="pt-4">

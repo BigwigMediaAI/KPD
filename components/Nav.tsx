@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Facebook, Instagram } from "lucide-react";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 import { usePathname } from "next/navigation"; // ✅ Fix SSR-safe pathname
@@ -31,16 +31,34 @@ const Navbar: React.FC = () => {
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       {/* Top Bar */}
       <div className="bg-[var(--primary-color)] text-white">
-        <div className="text-sm py-1 flex justify-end items-center space-x-4 w-11/12 md:w-5/6 mx-auto">
-          <div className="flex items-center space-x-1">
-            <span className="text-xs">📞</span>
-            <span>+91 9212717362</span>
-          </div>
-          <div className="flex items-center space-x-1">
-            <span className="text-xs">✉️</span>
-            <Link href="mailto:info@khalsaproperty.in">
-              info@khalsaproperty.in
+        <div className="text-sm py-2 flex justify-between items-center space-x-4 w-11/12 md:w-5/6 mx-auto">
+          <div className="flex space-x-4 ">
+            <Link
+              href="https://www.facebook.com/khalsaproperties"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook className="w-5 h-5 text-white hover:text-[#4267B2]" />
             </Link>
+            <Link
+              href="https://www.instagram.com/kpd_developers?igsh=MXV5bzI4bjZwczR2bA=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className="w-5 h-5 text-white hover:text-[#C13584]" />
+            </Link>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex items-center space-x-1">
+              <span className="text-xs">📞</span>
+              <span>+91 9212717362</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <span className="text-xs">✉️</span>
+              <Link href="mailto:info@khalsaproperty.in">
+                info@khalsaproperty.in
+              </Link>
+            </div>
           </div>
         </div>
       </div>
