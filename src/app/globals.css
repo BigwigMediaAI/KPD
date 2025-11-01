@@ -41,6 +41,21 @@
   display: none;
 }
 
+.react-quill-editor {
+  height: 300px; /* or whatever you prefer */
+  display: flex;
+  flex-direction: column;
+}
+
+.react-quill-editor .ql-toolbar {
+  flex-shrink: 0;
+}
+
+.react-quill-editor .ql-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
 .blog-content {
   margin: 0 auto;
   padding: 2rem 1rem;
