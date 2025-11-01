@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
@@ -11,7 +12,7 @@ interface BlogPost {
   author: string;
   tags?: string;
   coverImage?: string;
-  schemaMarkup?: string[]; // ✅ add this
+  schemaMarkup?: string[]; // ✅ Add this
 }
 
 const AddBlog = ({
@@ -31,6 +32,7 @@ const AddBlog = ({
     author: "",
     tags: "",
     coverImage: null as File | null,
+
     schemaMarkup: [""], // initialize with one field
   });
 
@@ -46,11 +48,10 @@ const AddBlog = ({
         author: existingBlog.author,
         tags: existingBlog.tags || "",
         coverImage: null,
-
         schemaMarkup:
-          existingBlog?.schemaMarkup && existingBlog.schemaMarkup.length > 0
+          existingBlog.schemaMarkup && existingBlog.schemaMarkup.length > 0
             ? existingBlog.schemaMarkup
-            : [""],
+            : [""], // ✅ No `any` needed
       });
     }
   }, [existingBlog]);
