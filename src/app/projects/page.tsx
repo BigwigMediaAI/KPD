@@ -33,6 +33,11 @@ function Projects() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
     <div>
+      <title>Top Residential & Commercial Projects in Delhi & Dubai</title>
+      <meta
+        name="description"
+        content="Explore a range of verified residential and commercial projects with top builders in Delhi, Gurgaon, and Dubai. Get complete property details and expert advice."
+      />
       <Navbar />
 
       {/* Page Header */}

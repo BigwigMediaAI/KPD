@@ -22,6 +22,11 @@ export default function Home() {
   }, []);
   return (
     <div>
+      <title>Buy & Sell Real Estate in Delhi NCR & Dubai</title>
+      <meta
+        name="description"
+        content="Looking to buy or sell property in Delhi NCR or Dubai? Khalsa Property Dealers helps you discover verified homes and commercial spaces with complete transparency, expert support, and trusted real estate experience."
+      />
       <Nav />
       <Hero />
 

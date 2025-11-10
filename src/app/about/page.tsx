@@ -12,6 +12,11 @@ const About: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
     <div>
+      <title>Know more about Khalsa Property Dealers</title>
+      <meta
+        name="description"
+        content="Trusted Real Estate Consultants in Delhi NCR"
+      />
       <Navbar />
       <div className="pt-[80px] md:pt-[128px]  text-[#04365b] font-[Raleway] bg-white">
         {/* About Section */}

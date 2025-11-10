@@ -87,6 +87,13 @@ export default function BuyPage() {
 
   return (
     <div className="w-full min-h-screen flex flex-col">
+      <title>
+        Buy Property in Delhi NCR, Gurgaon & Dubai | Verified Listings
+      </title>
+      <meta
+        name="description"
+        content="Explore verified residential and commercial properties for sale in Delhi, Gurgaon, and Dubai. Find your dream home or investment property with trusted experts at Khalsa Property Dealers."
+      />
       <div className="mt-20">
         <Navbar />
       </div>

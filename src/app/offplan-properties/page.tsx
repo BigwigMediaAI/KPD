@@ -89,6 +89,11 @@ export default function OffplanPage() {
 
   return (
     <div className="w-full min-h-screen flex flex-col">
+      <title>Invest in Off-Plan Properties in Dubai & Gurgaon</title>
+      <meta
+        name="description"
+        content="Explore upcoming off-plan property projects with flexible payment plans and high ROI. Ideal for investors seeking early entry into top developments."
+      />
       <div className="mt-20">
         <Navbar />
       </div>

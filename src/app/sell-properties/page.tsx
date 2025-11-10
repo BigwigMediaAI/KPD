@@ -36,6 +36,11 @@ function Sell() {
 
   return (
     <div>
+      <title>Sell Your Property Quickly at Best Price in Delhi NCR</title>
+      <meta
+        name="description"
+        content="Get expert help to sell your property faster and at the right market value. We connect you with verified buyers for a smooth and secure transaction."
+      />
       <div className="mt-20">
         <Navbar />
       </div>

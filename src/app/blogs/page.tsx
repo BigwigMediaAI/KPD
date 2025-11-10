@@ -71,6 +71,11 @@ const Blogs = () => {
 
   return (
     <div className="min-h-screen bg-white text-black">
+      <title>Real Estate Insights & Property Market Trends 2025</title>
+      <meta
+        name="description"
+        content="Stay updated with property market trends, buying tips, and investment insights from our expert real estate blogs. Perfect for home buyers and investors."
+      />
       <Nav />
 
       <div className="w-11/12 md:w-5/6 mx-auto flex flex-col gap-8 pt-[80px] md:pt-[128px]">
