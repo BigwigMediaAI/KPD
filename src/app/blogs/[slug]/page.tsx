@@ -75,13 +75,27 @@ export default async function BlogDetails({
     <div className="bg-white text-black min-h-screen">
       {/* Schema Markup */}
       {Array.isArray(blog.schemaMarkup) &&
-        blog.schemaMarkup.map((markup, idx) => (
-          <script
-            key={idx}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: markup }}
-          />
-        ))}
+        blog.schemaMarkup.map((markup, idx) => {
+          // 🧹 Clean out any <script> wrappers if present
+          const cleanMarkup = markup
+            .replace(/<\/?script[^>]*>/gi, "") // remove <script> and </script>
+            .trim();
+
+          try {
+            // ✅ Validate JSON structure before rendering
+            JSON.parse(cleanMarkup);
+            return (
+              <script
+                key={idx}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: cleanMarkup }}
+              />
+            );
+          } catch {
+            console.warn(`Invalid JSON-LD skipped at index ${idx}`);
+            return null;
+          }
+        })}
 
       <Navbar />
 
