@@ -115,6 +115,10 @@ export default function OffplanPage() {
         name="description"
         content="Explore upcoming off-plan property projects with flexible payment plans and high ROI. Ideal for investors seeking early entry into top developments."
       />
+      <link
+        rel="canonical"
+        href="https://www.khalsapropertydealers.com/offplan-properties"
+      />
       <div className="mt-20">
         <Navbar />
       </div>

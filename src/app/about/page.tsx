@@ -38,6 +38,10 @@ const About: React.FC = () => {
         name="description"
         content="Trusted Real Estate Consultants in Delhi NCR"
       />
+      <link
+        rel="canonical"
+        href="https://www.khalsapropertydealers.com/about"
+      />
       <Navbar />
       <div className="pt-[80px] md:pt-[128px]  text-[#04365b] font-[Raleway] bg-white">
         {/* About Section */}

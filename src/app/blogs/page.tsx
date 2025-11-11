@@ -97,6 +97,10 @@ const Blogs = () => {
         name="description"
         content="Stay updated with property market trends, buying tips, and investment insights from our expert real estate blogs. Perfect for home buyers and investors."
       />
+      <link
+        rel="canonical"
+        href="https://www.khalsapropertydealers.com/blogs"
+      />
       <Nav />
 
       <div className="w-11/12 md:w-5/6 mx-auto flex flex-col gap-8 pt-[80px] md:pt-[128px]">

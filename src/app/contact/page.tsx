@@ -38,6 +38,10 @@ export default function ContactPage() {
         name="description"
         content="Get in touch with Khalsa Property Dealers for expert guidance on buying or selling properties in Delhi, Gurgaon, or Dubai. Reach out today for transparent advice and trusted real estate support."
       />
+      <link
+        rel="canonical"
+        href="https://www.khalsapropertydealers.com/contact"
+      />
       <Navbar />
 
       <section className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-8  mt-20 md:mt-32">

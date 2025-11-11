@@ -62,6 +62,10 @@ function Sell() {
         name="description"
         content="Get expert help to sell your property faster and at the right market value. We connect you with verified buyers for a smooth and secure transaction."
       />
+      <link
+        rel="canonical"
+        href="https://www.khalsapropertydealers.com/sell-properties"
+      />
       <div className="mt-20">
         <Navbar />
       </div>
