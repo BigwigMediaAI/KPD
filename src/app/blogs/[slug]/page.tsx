@@ -73,6 +73,18 @@ export default async function BlogDetails({
 
   return (
     <div className="bg-white text-black min-h-screen">
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta property="og:title" content={blog.title} />
+      <meta property="og:description" content={blog.excerpt} />
+      <meta property="og:image" content={blog.coverImage} />
+      <meta
+        property="og:url"
+        content={`https://www.khalsapropertydealers.com/blogs/${blog.slug}`}
+      />
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="Khalsa Property Dealers" />
+      <meta property="og:locale" content="en_US" />
+
       {/* Schema Markup */}
       {Array.isArray(blog.schemaMarkup) &&
         blog.schemaMarkup.map((markup, idx) => {
