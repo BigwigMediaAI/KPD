@@ -89,6 +89,27 @@ export default function OffplanPage() {
 
   return (
     <div className="w-full min-h-screen flex flex-col">
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta
+        property="og:title"
+        content="Invest in Off-Plan Properties in Dubai & Gurgaon"
+      />
+      <meta
+        property="og:description"
+        content="Explore upcoming off-plan property projects with flexible payment plans and high ROI. Ideal for investors seeking early entry into top developments."
+      />
+      <meta
+        property="og:image"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+      />
+      <meta
+        property="og:url"
+        content="https://www.khalsapropertydealers.com/offplan-properties"
+      />
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="Khalsa Property Dealers" />
+      <meta property="og:locale" content="en_US" />
+
       <title>Invest in Off-Plan Properties in Dubai & Gurgaon</title>
       <meta
         name="description"

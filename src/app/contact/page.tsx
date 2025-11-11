@@ -10,6 +10,27 @@ import ContactSidebar from "../../../components/ContactSidebar";
 export default function ContactPage() {
   return (
     <div className=" bg-white min-h-screen text-black">
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta
+        property="og:title"
+        content="Contact Khalsa Property Dealers | Real Estate Experts in Delhi NCR"
+      />
+      <meta
+        property="og:description"
+        content="Get in touch with Khalsa Property Dealers for expert guidance on buying or selling properties in Delhi, Gurgaon, or Dubai. Reach out today for transparent advice and trusted real estate support."
+      />
+      <meta
+        property="og:image"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+      />
+      <meta
+        property="og:url"
+        content="https://www.khalsapropertydealers.com/contact"
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Khalsa Property Dealers" />
+      <meta property="og:locale" content="en_US" />
+
       <title>
         Contact Khalsa Property Dealers | Real Estate Experts in Delhi NCR
       </title>

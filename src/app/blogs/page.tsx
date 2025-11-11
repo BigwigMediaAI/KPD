@@ -71,6 +71,27 @@ const Blogs = () => {
 
   return (
     <div className="min-h-screen bg-white text-black">
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta
+        property="og:title"
+        content="Real Estate Insights & Property Market Trends 2025"
+      />
+      <meta
+        property="og:description"
+        content="Stay updated with property market trends, buying tips, and investment insights from our expert real estate blogs. Perfect for home buyers and investors."
+      />
+      <meta
+        property="og:image"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+      />
+      <meta
+        property="og:url"
+        content="https://www.khalsapropertydealers.com/blogs"
+      />
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="Khalsa Property Dealers" />
+      <meta property="og:locale" content="en_US" />
+
       <title>Real Estate Insights & Property Market Trends 2025</title>
       <meta
         name="description"

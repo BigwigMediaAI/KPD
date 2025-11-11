@@ -36,6 +36,27 @@ function Sell() {
 
   return (
     <div>
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta
+        property="og:title"
+        content="Sell Your Property Quickly at Best Price in Delhi NCR"
+      />
+      <meta
+        property="og:description"
+        content="Get expert help to sell your property faster and at the right market value. We connect you with verified buyers for a smooth and secure transaction."
+      />
+      <meta
+        property="og:image"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+      />
+      <meta
+        property="og:url"
+        content="https://www.khalsapropertydealers.com/sell-properties"
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Khalsa Property Dealers" />
+      <meta property="og:locale" content="en_US" />
+
       <title>Sell Your Property Quickly at Best Price in Delhi NCR</title>
       <meta
         name="description"
