@@ -115,6 +115,10 @@ export default function BuyPage() {
         name="description"
         content="Explore verified residential and commercial properties for sale in Delhi, Gurgaon, and Dubai. Find your dream home or investment property with trusted experts at Khalsa Property Dealers."
       />
+      <link
+        rel="canonical"
+        href="https://www.khalsapropertydealers.com/buy-properties"
+      />
       <div className="mt-20">
         <Navbar />
       </div>

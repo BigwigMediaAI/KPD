@@ -59,6 +59,10 @@ function Projects() {
         name="description"
         content="Explore a range of verified residential and commercial projects with top builders in Delhi, Gurgaon, and Dubai. Get complete property details and expert advice."
       />
+      <link
+        rel="canonical"
+        href="https://www.khalsapropertydealers.com/projects"
+      />
       <Navbar />
 
       {/* Page Header */}
